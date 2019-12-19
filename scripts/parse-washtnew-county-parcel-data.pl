@@ -1,59 +1,63 @@
 #!/usr/bin/env perl
 
-use Modern::Perl;
 use Class::CSV;
-use Getopt::Long qw(HelpMessage);;
+use Getopt::Long qw(HelpMessage);
+use List::MoreUtils qw(uniq);
+use Modern::Perl;
+use String::Random qw(random_regex);
 
 my $res_headers = [
-    qw(
-      jurisdicti
-      pelnumber
-      onername1
-      onername2
-      pssnumber
-      pdressapt
-      pdressdir
-      pssstreet
-      setsuffix
-      presscity
-      pdresszip
-      prtyclass
-      pqualifag
-      p_percent
-      tax
-      bldg_footprint
-      longitude_
-      latitude_1
-      tractce10
-      blockce10
-      geoid
-      )
+  qw(
+    jurisdicti
+    pelnumber
+    onername1
+    onername2
+    pssnumber
+    pdressapt
+    pdressdir
+    pssstreet
+    setsuffix
+    presscity
+    pdresszip
+    prtyclass
+    pqualifag
+    p_percent
+    tax
+    bldg_footprint
+    longitude_
+    latitude_1
+    tractce10
+    blockce10
+    geoid
+    )
 ];
 
 my $comm_headers = [
-    qw(
-      jurisdiction
-      pelnumber
-      onername1
-      onername2
-      pssnumber
-      pdressapt
-      pdressdir
-      pssstreet
-      setsuffix
-      presscity
-      pdresszip
-      prtyclass
-      p_percent
-      tax
-      bldg_footprint
-      longitude_
-      latitude_1
-      tractce10
-      blockce10
-      geoid
-      )
+  qw(
+    jurisdiction
+    pelnumber
+    onername1
+    onername2
+    pssnumber
+    pdressapt
+    pdressdir
+    pssstreet
+    setsuffix
+    presscity
+    pdresszip
+    prtyclass
+    p_percent
+    tax
+    bldg_footprint
+    longitude_
+    latitude_1
+    tractce10
+    blockce10
+    geoid
+    )
 ];
+
+my $merged_headers = [uniq(@{$res_headers}, @{$comm_headers}, 'participant_id')];
 
 my $prop_type_map = {
   residential => $res_headers,
@@ -64,19 +68,19 @@ my $output_type_map = {
   sql  => \&_output_sql,
   json => \&_output_json,
   csv  => \&_output_csv,
-}; 
+};
 
-my ($file, $type, $output);
+my ($file, $type, $output, $parcel_ids);
 
 GetOptions(
-  'file|f=s'   => sub {
-      $file = $_[1];
-      unless (-e $file and -r _) {
-        say "File, $file, does not exist or is not readable";
-        HelpMessage(1);
-      }
+  'file|f=s' => sub {
+    $file = $_[1];
+    unless (-e $file and -r _) {
+      say "File, $file, does not exist or is not readable";
+      HelpMessage(1);
+    }
   },
-  'type|t=s'   => sub {
+  'type|t=s' => sub {
     $type = $_[1];
     unless (exists $prop_type_map->{$type}) {
       say "Property type, $type, is not valid. Possible values are (commericial|residential).";
@@ -92,10 +96,52 @@ GetOptions(
     }
   },
   'h|help' => sub {
-    HelpMessage()
-  } ,
-)
-or HelpMessage(1);
+    HelpMessage();
+  },
+  )
+  or HelpMessage(1);
+
+my $headers = $prop_type_map->{$type};
+my $out_csv = Class::CSV->new(fields => $merged_headers);
+my $in_csv  = Class::CSV->parse(filename => $file, fields => $headers);
+
+my @lines = @{$in_csv->lines()};
+shift @lines;
+
+$out_csv->add_line({ map {$_ => $_} @{$merged_headers}});
+for my $line (@lines) {
+  my $new_line = {map {$_ => $line->$_} @{$headers}};
+  $new_line->{participant_id} = _generate_unique_parcel_id();
+  $out_csv->add_line($new_line);
+}
+
+$out_csv->print;
+
+sub _generate_unique_parcel_id {
+  my $id = random_regex('\d\d\d\d\d');
+  return $id unless $parcel_ids->{$id};
+
+  {
+    $id = random_regex('\d\d\d\d\d');
+    redo if exists $parcel_ids->{$id};
+    $parcel_ids->{$id}++;
+  }
+
+  return $id;
+}
+
+sub _output_sql {
+}
+
+sub _output_json {
+
+}
+
+sub _output_csv {
+
+}
+
+exit;
 
 __END__
 
@@ -109,9 +155,9 @@ parse-washtenaw-county-parcel-data.pl [OPTIONS]
 
   Options:
 
-    -f, --file    CSV file to parse
-    -t, --type    The type of data in the csv [commercial|residential]
-    -o, --output  Output format [sql|json|csv]
+    -f, --file   CSV file to parse
+    -t, --type   The type of data in the csv [commercial|residential]
+    -o, --output Output format [sql|json|csv]
 
 =head1 DESCRIPTION
 
