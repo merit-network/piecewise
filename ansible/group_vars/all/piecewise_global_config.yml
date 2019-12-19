@@ -420,8 +420,8 @@ form_fields:
       name: survey_street_name
       id: survey_street_name
       class: ""
-      text: "Please only include street name. e.g.  Main NOT Main St.)"
-      title: "Please only include street name. e.g.  Main NOT Main St.)"
+      text: "Please only include street name. (e.g.  Main NOT Main St.)"
+      title: "Please only include street name. (e.g.  Main NOT Main St.)"
       required: no
   4:
     survey_street_number:
@@ -451,10 +451,10 @@ form_fields:
         d_south: "South"
         e_east: "East"
         f_west: "West"
-        g_north_west: "North West"
-        h_north_east: "North East"
-        i_south_west: "South West"
-        j_south_east: "South East"
+        g_north_west: "Northwest"
+        h_north_east: "Northeast"
+        i_south_west: "Southwest"
+        j_south_east: "Southeast"
   6:
     survey_township:
       field_type: select_list
