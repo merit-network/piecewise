@@ -391,19 +391,101 @@ mapscript_month_names:
 
 form_fields:
   1:
-    survey_tax_id:
+    survey_participant_id:
       field_type: text
       page: 1
       db_type: String
-      name: survey_tax_id
-      id: survey_tax_id
+      name: survey_participant_id
+      id: survey_participant_id
       class: ''
-      text: "Enter your property tax ID or address (only show for general website participants)"
-      title: "Enter your property tax ID or address (only show for general website participants)"
+      text: "Unique participant id"
+      title: "Unique participant id"
       required: no
   2:
-    survey_device:
+    survey_parcel_id:
       field_type: text
+      page: 1
+      db_type: String
+      name: suvery_parcel_id
+      id: survey_parcel_id
+      class: ""
+      text: "Property parcel ID"
+      title: "Property parcel ID"
+      required: no
+  3:
+    survey_street_name:
+      field_type: text
+      page: 1
+      db_type: String
+      name: survey_street_name
+      id: survey_street_name
+      class: ""
+      text: "Please only include street name. e.g.  Main NOT Main St.)"
+      title: "Please only include street name. e.g.  Main NOT Main St.)"
+      required: no
+  4:
+    survey_street_number:
+      field_type: text
+      page: 1
+      db_type: String
+      name: survey_street_number
+      id: survey_street_number
+      class: ""
+      text: "Please include the street number"
+      title: "Please include the street number"
+      required: no
+  5:
+    survey_street_direction:
+      field_type: select_list
+      db_type: String
+      name: survey_street_direction
+      id: survey_street_direction
+      class: ""
+      text: "Please include the street direction"
+      title: "Please include the street direction"
+      required: no
+      options:
+        a_default: "------"
+        b_none: "None"
+        c_north: "North"
+        d_south: "South"
+        e_east: "East"
+        f_west: "West"
+        g_north_west: "North West"
+        h_north_east: "North East"
+        i_south_west: "South West"
+        j_south_east: "South East"
+  6:
+    survey_township:
+      field_type: select_list
+      db_type: String
+      name: survey_township
+      id: survey_township
+      class: ""
+      text: "City, Village, or Township"
+      title: "City, Village, or Township"
+      required: no
+      options:
+        a_default: "------"
+        b_none: "None"
+        c_ann_arbor: "Ann Arbor"
+        d_augusta: "Augusta"
+        e_bridgewater: "Bridgewater"
+        f_dexter: "Dexter"
+        g_freedman: "Freedom"
+        h_lima: "Lima"
+        i_lodi: "Lodi"
+        j_manchester: "Manchester"
+        k_northfield: "Northfield"
+        l_saline: "Saline"
+        m_scio: "Scio"
+        n_sharon: "Sharon"
+        o_sylvan: "Sylvan"
+        p_webster: "Webster"
+        q_york: "York"
+  7:
+    survey_device:
+      field_type: select_list
       page: 1
       db_type: String
       name: survey_device
@@ -419,7 +501,7 @@ form_fields:
         d_computer_wired: "Computer  (wired internet)"
         e_computer_tablet_wifi: "Computer/Tablet  (wifi)"
         f_computer_table_hotspot: "Computer/Tablet (cellular hotspot)"
-  3:
+  8:
     survey_service_type:
       field_type: select_list
       page: 1
@@ -437,8 +519,9 @@ form_fields:
         d_dsl: "DSL"
         e_satellite: "Satellite"
         f_mobile: "Celluar Data Plan"
-        g_unknown: "Unknown"
-  4:
+        g_other: "Other"
+        h_unknown: "Unknown"
+  9:
     survey_provider:
       field_type: select_list
       page: 1
@@ -459,7 +542,7 @@ form_fields:
         g_dish: "Dish Network"
         h_sprint: "Sprint / T-Mobile"
         i_unknown: "Unknown"
-  5:
+  10:
     survey_subscribe_upload:
       field_type: text
       page: 1
@@ -470,7 +553,7 @@ form_fields:
       text: "To the best of your knowledge, what upload speed do you currently subscribe to?  (eg 10 Mbps down, 1 Mbps up)?  Please leave this blank if you do not know."
       title: "To the best of your knowledge, what upload speed do you currently subscribe to?  (eg 10 Mbps down, 1 Mbps up)?  Please leave this blank if you do not know."
       required: no
-  6:
+  11:
     survey_subscribe_download:
       field_type: text
       page: 1
@@ -481,7 +564,7 @@ form_fields:
       text: "To the best of your knowledge, what download speed do you currently subscribe to?  (eg 10 Mbps down, 1 Mbps up)?  Please leave this blank if you do not know."
       title: "To the best of your knowledge, what download speed do you currently subscribe to?  (eg 10 Mbps down, 1 Mbps up)?  Please leave this blank if you do not know."
       required: no
-  7:
+  12:
     survey_improve:
       field_type: select_list 
       page: 1
@@ -499,7 +582,7 @@ form_fields:
         d_reliablity: "More reliable service"
         e_service: "Better customer service"
         f_nothing: "Nothing"
-  8:
+  13:
     survey_current_cost:
       field_type: select_list
       page: 1
@@ -518,7 +601,7 @@ form_fields:
         e_76_to_100: "$76-100/month"
         f_over_100: "$100+/month"
         g_unknown: "I don't know"
-  9:
+  14:
     survey_max_cost:
       field_type: select_list
       page: 1
@@ -537,7 +620,7 @@ form_fields:
         e_76_to_100: "$76-100/month"
         f_over_100: "$100+/month"
         g_unknown: "I don't know"
-  10:
+  15:
     survey_new_carrier:
       field_type: select_list
       page: 1
@@ -556,7 +639,7 @@ form_fields:
         e_somewhat_willing: "Somewhat willing"
         f_extremely_willing: "Extremely willing"
         g_unknown: "I don't know"
-  11:
+  16:
     survey_satisfaction:
       field_type: select_list
       page: 1
@@ -574,8 +657,7 @@ form_fields:
         d_neutral: "Neutral"
         e_dissatisfied: "Dissatisfied"
         f_very_dissatisfied: "Very dissatisfied"
-        g_no_service: "I have no internet service"
-  12:
+  17:
     survey_usage_homework:
       field_type: select_list
       page: 1
@@ -589,7 +671,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  13:
+  18:
     survey_usage_web_email:
       field_type: select_list
       page: 1
@@ -603,7 +685,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  14:
+  19:
     survey_usage_education:
       field_type: select_list
       page: 1
@@ -617,7 +699,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  15:
+  20:
     survey_usage_job_search:
       field_type: select_list
       page: 1
@@ -631,7 +713,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  16:
+  21:
     survey_usage_remote_work:
       field_type: select_list
       page: 1
@@ -645,7 +727,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  17:
+  22:
     survey_usage_social_media:
       field_type: select_list
       page: 1
@@ -659,7 +741,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  18:
+  23:
     survey_usage_shopping:
       field_type: select_list
       page: 1
@@ -673,7 +755,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  19:
+  24:
     survey_usage_research:
       field_type: select_list
       page: 1
@@ -687,7 +769,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  20:
+  25:
     survey_usage_video_share:
       field_type: select_list
       page: 1
@@ -701,7 +783,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  21:
+  26:
     survey_usage_healthcare:
       field_type: select_list
       page: 1
@@ -715,7 +797,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  22:
+  27:
     survey_usage_banking:
       field_type: select_list
       page: 1
@@ -729,7 +811,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  23:
+  28:
     survey_usage_video_stream:
       field_type: select_list
       page: 1
@@ -743,7 +825,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  24:
+  29:
     survey_usage_gaming:
       field_type: select_list
       page: 1
@@ -757,7 +839,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  25:
+  30:
     survey_usage_gov_services:
       field_type: select_list
       page: 1
@@ -771,7 +853,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  26:
+  31:
     survey_better_access_homework:
       field_type: select_list
       page: 1
@@ -785,7 +867,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  27:
+  32:
     survey_better_access_web_email:
       field_type: select_list
       page: 1
@@ -799,7 +881,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  28:
+  33:
     survey_better_access_education:
       field_type: select_list
       page: 1
@@ -813,7 +895,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  29:
+  34:
     survey_better_access_job_search:
       field_type: select_list
       page: 1
@@ -827,7 +909,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  30:
+  35:
     survey_better_access_remote_work:
       field_type: select_list
       page: 1
@@ -841,7 +923,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  31:
+  36:
     survey_better_access_social_media:
       field_type: select_list
       page: 1
@@ -855,7 +937,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  32:
+  37:
     survey_better_access_shopping:
       field_type: select_list
       page: 1
@@ -869,7 +951,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  33:
+  38:
     survey_better_access_research:
       field_type: select_list
       page: 1
@@ -883,7 +965,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  34:
+  39:
     survey_better_access_video_share:
       field_type: select_list
       page: 1
@@ -897,7 +979,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  35:
+  40:
     survey_better_access_healthcare:
       field_type: select_list
       page: 1
@@ -911,7 +993,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  36:
+  41:
     survey_better_access_banking:
       field_type: select_list
       page: 1
@@ -925,7 +1007,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  37:
+  42:
     survey_better_access_video_stream:
       field_type: select_list
       page: 1
@@ -939,7 +1021,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  38:
+  43:
     survey_better_acccess_gaming:
       field_type: select_list
       page: 1
@@ -953,7 +1035,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  39:
+  44:
     survey_better_acccess_gov_services:
       field_type: select_list
       page: 1
@@ -967,7 +1049,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  40:
+  45:
     survery_sufficient_service:
       field_type: select_list
       page: 1
@@ -983,7 +1065,7 @@ form_fields:
         c_no: "No"
         d_maybe: "Maybe"
         e_unknown: "I don't know"
-  41:
+  46:
     survey_no_residents:
       field_type: select_list
       page: 1
@@ -1005,7 +1087,7 @@ form_fields:
         b_7: "7"
         b_8: "8"
         b_9: "9+"
-  42:
+  47:
     survey_k12_students:
       field_type: select_list
       page: 1
@@ -1071,7 +1153,7 @@ rtt_result_label: "Minimum Round Trip Time:"
 rtt_result_unit: "ms"
 thank_you_heading: "Thank you!"
 thank_you_message: >
-  Your test results will be combined with others and will appear on the map soon.
+  Thank you for completing this survey and speed test. Please remember you DO NOT need to return the paper survey if you completed the online version. Your test results will be combined with others and will appear on the map soon.
 # #DEFAULT#
 #
 

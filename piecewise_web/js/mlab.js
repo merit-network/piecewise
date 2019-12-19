@@ -1028,4 +1028,16 @@ $( document ).ready(function() {
 
   let participant_id = window.location.pathname.split('/')[1];
   $('#survey_participant_id').val(participant_id);
+
+  /* TODO
+    - if we have an id on the url path
+      - use for the survey_participant_id
+      - keep tax id field hidden
+    - if no path id
+      - show tax id field and mark required
+    - 
+
+
+  */
+
 });
