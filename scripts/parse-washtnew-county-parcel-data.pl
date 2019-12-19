@@ -64,14 +64,7 @@ my $prop_type_map = {
   commericial => $comm_headers,
 };
 
-my $output_type_map = {
-  sql  => \&_output_sql,
-  json => \&_output_json,
-  csv  => \&_output_csv,
-};
-
-my ($file, $type, $output, $parcel_ids);
-
+my ($file, $type, $parcel_ids);
 GetOptions(
   'file|f=s' => sub {
     $file = $_[1];
@@ -88,13 +81,6 @@ GetOptions(
     }
 
   },
-  'output|o' => sub {
-    $output = $_[1];
-    unless (exists $output_type_map->{$output}) {
-      say "Output format, $output, is not valid. Possible values are (sql|json|csv).";
-      HelpMessage(1);
-    }
-  },
   'h|help' => sub {
     HelpMessage();
   },
@@ -108,7 +94,7 @@ my $in_csv  = Class::CSV->parse(filename => $file, fields => $headers);
 my @lines = @{$in_csv->lines()};
 shift @lines;
 
-$out_csv->add_line({ map {$_ => $_} @{$merged_headers}});
+$out_csv->add_line({map {$_ => $_} @{$merged_headers}});
 for my $line (@lines) {
   my $new_line = {map {$_ => $line->$_} @{$headers}};
   $new_line->{participant_id} = _generate_unique_parcel_id();
@@ -130,17 +116,6 @@ sub _generate_unique_parcel_id {
   return $id;
 }
 
-sub _output_sql {
-}
-
-sub _output_json {
-
-}
-
-sub _output_csv {
-
-}
-
 exit;
 
 __END__
@@ -157,7 +132,6 @@ parse-washtenaw-county-parcel-data.pl [OPTIONS]
 
     -f, --file   CSV file to parse
     -t, --type   The type of data in the csv [commercial|residential]
-    -o, --output Output format [sql|json|csv]
 
 =head1 DESCRIPTION
 
