@@ -45,3 +45,29 @@ CREATE INDEX maxmind_ip_range_idx ON maxmind USING GIST (ip_range);
 
 COPY maxmind (ip_low, ip_high, label) FROM '/opt/GeoIPASNum2.csv' WITH (FORMAT csv, HEADER false, encoding 'latin1');
 UPDATE maxmind SET ip_range = int8range(ip_low, ip_high);
+
+CREATE TABLE parcels (
+  jurisdiction varchar,
+  participant_id int,
+  parcel_type varchar,
+  pelnumber varchar,
+  onername1 varchar,
+  onername2 varchar,
+  pssnumber varchar,
+  pdressapt varchar,
+  pdressdir varchar,
+  pssstreet varchar,
+  setsuffix varchar,
+  presscity varchar,
+  pdresszip varchar,
+  prtyclass varchar,
+  pqualifag varchar,
+  p_percent varchar,
+  tax varchar,
+  bldg_footprint varchar,
+  longitude_ varchar,
+  latitude_1 varchar,
+  tractce10 varchar,
+  blockce10 varchar,
+  geoid varchar,
+);
