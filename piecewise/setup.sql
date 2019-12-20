@@ -69,5 +69,5 @@ CREATE TABLE parcels (
   latitude_1 varchar,
   tractce10 varchar,
   blockce10 varchar,
-  geoid varchar,
+  geoid varchar
 );
