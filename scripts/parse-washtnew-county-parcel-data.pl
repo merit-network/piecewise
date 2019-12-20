@@ -67,7 +67,7 @@ my $merged_headers = [
 
 my $prop_type_map = {
   residential => $res_headers,
-  commericial => $comm_headers,
+  commercial  => $comm_headers,
 };
 
 my $parcel_cache_dir = File::Spec->catfile($ENV{HOME}, '.local', 'share', 'piecewise');
