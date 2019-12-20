@@ -96,6 +96,7 @@ GetOptions(
   'cache|c=s' => sub {
     $parcel_cache_file = $_[1] if -e $_[1] and -w _;
   },
+  'headers' => \(my $show_headers = undef),
   'h|help' => sub {
     HelpMessage();
   },
@@ -112,7 +113,10 @@ my $in_csv  = Class::CSV->parse(filename => $file, fields => $headers);
 my @lines = @{$in_csv->lines()};
 shift @lines;
 
-$out_csv->add_line({map {$_ => $_} @{$merged_headers}});
+if ($show_headers) {
+  $out_csv->add_line({map {$_ => $_} @{$merged_headers}});
+}
+
 for my $line (@lines) {
   my $new_line = {map {$_ => $line->$_} @{$headers}};
 
@@ -157,6 +161,8 @@ parse-washtenaw-county-parcel-data.pl [OPTIONS]
     -f, --file   CSV file to parse
     -t, --type   The type of data in the csv [commercial|residential]
     -c, --cache  Full path to DBM cache file for unique parcel ids
+
+    --headers    Include column header line (default no headers)
 
 =head1 DESCRIPTION
 
