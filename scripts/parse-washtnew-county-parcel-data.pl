@@ -1,6 +1,9 @@
 #!/usr/bin/env perl
 
 use Class::CSV;
+use DB_File;
+use File::Path qw(make_path);
+use File::Spec;
 use Getopt::Long qw(HelpMessage);
 use List::MoreUtils qw(uniq);
 use Modern::Perl;
@@ -57,14 +60,24 @@ my $comm_headers = [
     )
 ];
 
-my $merged_headers = [uniq(@{$res_headers}, @{$comm_headers}, 'participant_id')];
+my $merged_headers = [
+  grep {!/^jurisdicti$/}
+  uniq('jurisdiction', 'participant_id', 'parcel_type', @{$res_headers}, @{$comm_headers})
+];
 
 my $prop_type_map = {
   residential => $res_headers,
   commericial => $comm_headers,
 };
 
-my ($file, $type, $parcel_ids);
+my $parcel_cache_dir = File::Spec->catfile($ENV{HOME}, '.local', 'share', 'piecewise');
+my $parcel_cache_file = File::Spec->catfile($parcel_cache_dir, 'parcel_cache.db');
+
+unless (-e $parcel_cache_dir) {
+  make_path($parcel_cache_dir);
+}
+
+my ($file, $type);
 GetOptions(
   'file|f=s' => sub {
     $file = $_[1];
@@ -79,13 +92,18 @@ GetOptions(
       say "Property type, $type, is not valid. Possible values are (commericial|residential).";
       HelpMessage(1);
     }
-
+  },
+  'cache|c=s' => sub {
+    $parcel_cache_file = $_[1] if -e $_[1] and -w _;
   },
   'h|help' => sub {
     HelpMessage();
   },
   )
   or HelpMessage(1);
+
+my %parcel_id_cache = ();
+tie %parcel_id_cache, 'DB_File', $parcel_cache_file; ## no critic (ProhibitTies)
 
 my $headers = $prop_type_map->{$type};
 my $out_csv = Class::CSV->new(fields => $merged_headers);
@@ -97,20 +115,26 @@ shift @lines;
 $out_csv->add_line({map {$_ => $_} @{$merged_headers}});
 for my $line (@lines) {
   my $new_line = {map {$_ => $line->$_} @{$headers}};
+
   $new_line->{participant_id} = _generate_unique_parcel_id();
+  $new_line->{parcel_type} = $type;
+
+  if (exists $new_line->{jurisdicti}) {
+    $new_line->{jurisdiction} = delete $new_line->{jurisdicti};
+  }
+
   $out_csv->add_line($new_line);
 }
 
 $out_csv->print;
 
 sub _generate_unique_parcel_id {
-  my $id = random_regex('\d\d\d\d\d');
-  return $id unless $parcel_ids->{$id};
+  my $id;
 
   {
     $id = random_regex('\d\d\d\d\d');
-    redo if exists $parcel_ids->{$id};
-    $parcel_ids->{$id}++;
+    redo if exists $parcel_id_cache{$id};
+    $parcel_id_cache{$id}++;
   }
 
   return $id;
@@ -132,6 +156,7 @@ parse-washtenaw-county-parcel-data.pl [OPTIONS]
 
     -f, --file   CSV file to parse
     -t, --type   The type of data in the csv [commercial|residential]
+    -c, --cache  Full path to DBM cache file for unique parcel ids
 
 =head1 DESCRIPTION
 
