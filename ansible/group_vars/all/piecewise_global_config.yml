@@ -394,13 +394,13 @@ form_fields:
     survey_participant_id:
       field_type: text
       page: 1
-      db_type: String
+      db_type: Integer
       name: survey_participant_id
       id: survey_participant_id
-      class: ''
+      class: ""
       text: "Unique participant id"
       title: "Unique participant id"
-      required: no
+      required: yes
   2:
     survey_parcel_id:
       field_type: text
@@ -411,7 +411,7 @@ form_fields:
       class: ""
       text: "Property parcel ID"
       title: "Property parcel ID"
-      required: no
+      required: yes
   3:
     survey_street_name:
       field_type: text
@@ -419,10 +419,10 @@ form_fields:
       db_type: String
       name: survey_street_name
       id: survey_street_name
-      class: ""
+      class: "survey-address-field"
       text: "Please only include street name. (e.g.  Main NOT Main St.)"
       title: "Please only include street name. (e.g.  Main NOT Main St.)"
-      required: no
+      required: yes
   4:
     survey_street_number:
       field_type: text
@@ -430,20 +430,20 @@ form_fields:
       db_type: String
       name: survey_street_number
       id: survey_street_number
-      class: ""
+      class: "survey-address-field"
       text: "Please include the street number"
       title: "Please include the street number"
-      required: no
+      required: yes
   5:
     survey_street_direction:
       field_type: select_list
       db_type: String
       name: survey_street_direction
       id: survey_street_direction
-      class: ""
+      class: "survey-address-field"
       text: "Please include the street direction"
       title: "Please include the street direction"
-      required: no
+      required: yes
       options:
         a_default: "------"
         b_none: "None"
@@ -461,10 +461,10 @@ form_fields:
       db_type: String
       name: survey_township
       id: survey_township
-      class: ""
+      class: "survey-address-field"
       text: "City, Village, or Township"
       title: "City, Village, or Township"
-      required: no
+      required: yes
       options:
         a_default: "------"
         b_none: "None"

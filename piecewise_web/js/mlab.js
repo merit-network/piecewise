@@ -761,6 +761,19 @@ function uncheckAcknowledgement(){
 
 function submitExtraData() {
   var formData = $('#collector').serialize();
+
+  // TODO [06/01/2020 - schelcj] check that participant_id or parcel_id are set if not required address fields
+  let participant_id = $('#survey_participant_id').val();
+  if (participant_id === "") {
+
+    let parcel_id = $('#survey_parcel_id').val();
+    if (parcel_id === "") {
+      $('.survey_address_field').each(function() {
+        // TODO [06/01/2020 - schelcj] - this is field empty?
+      })
+    }
+  }
+
   $.ajax({
     method: 'GET',
     url: $('#collector').attr('action'),
@@ -1027,17 +1040,13 @@ $( document ).ready(function() {
   });
 
   let participant_id = window.location.pathname.split('/')[1];
-  $('#survey_participant_id').val(participant_id);
+  if (participant_id !== "") {
+    $('#survey_participant_id').val(participant_id);
 
-  /* TODO
-    - if we have an id on the url path
-      - use for the survey_participant_id
-      - keep tax id field hidden
-    - if no path id
-      - show tax id field and mark required
-    - 
+    $('#container-survey_parcel_id').hide();
 
-
-  */
-
+    $('.survey_address_field').each(function() {
+      $(this).parent().parent().hide();
+    })
+  }
 });
