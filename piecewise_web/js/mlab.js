@@ -641,6 +641,22 @@ function showTestingPanel() {
 
 /* New functions */
 function runTest() {
+  let parcel_id = $('#survey_parcel_id').val();
+  if (parcel_id === "") {
+    $('.survey-address-field').each(function() {
+      if ($(this).val() === "" || $(this).val() === "a_default") {
+        let $container = $('#container-' + $(this).attr('id'));
+        $container.addClass('has-error');
+        $container.find('.field-container:first-child').append($('<small/>', {class: 'text-muted text-danger', text: '(This field is required without a parcel id.)'}));
+      }
+    });
+
+    let $parcel_container_offset = $('#container-survey_parcel_id').offset();      
+    window.scrollTo($parcel_container_offset.left, $parcel_container_offset.top);
+
+    return;
+  }
+
   $('#ndt-div').removeClass('hidden');
   $('.logos').addClass('hidden');
   $('#faq').addClass('hidden');
@@ -1045,8 +1061,8 @@ $( document ).ready(function() {
 
     $('#container-survey_parcel_id').hide();
 
-    $('.survey_address_field').each(function() {
+    $('.survey-address-field').each(function() {
       $(this).parent().parent().hide();
-    })
+    });
   }
 });

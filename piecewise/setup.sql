@@ -49,6 +49,7 @@ UPDATE maxmind SET ip_range = int8range(ip_low, ip_high);
 CREATE TABLE parcels (
   jurisdiction varchar,
   participant_id int,
+  participant_url text,
   parcel_type varchar,
   pelnumber varchar,
   onername1 varchar,

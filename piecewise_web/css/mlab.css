@@ -1367,3 +1367,7 @@ a.leaflet-popup-close-button {
 #container-survey_participant_id {
   display: none;
 }
+
+.container-has-error {
+  border: red 1px solid;
+}

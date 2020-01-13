@@ -1,0 +1,10 @@
+Washtenaw County Broadband:
+    ✔ sort out maxmind files @done(20-01-10 16:19)
+    ✔ deploy to prod01 @done(20-01-10 16:31)
+    ✔ finish required field shenanigans @done(20-01-13 15:31)
+    ✔ verify that join across parcels and extra_data works as expected @done(20-01-13 13:52)
+    ✔ get data ingest working @done(20-01-13 13:45)
+    ✔ add data ingest cronjob @done(20-01-13 13:44)
+    ✔ document server setup(s) in confluence @done(20-01-13 15:04)
+    ✔ setup backup volume and rsync cronjob @done(20-01-13 13:58)
+    ☐ verify backups are running for postgres

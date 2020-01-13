@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-cd /tmp
-rm -f GeoIPASNum2.*
-wget http://download.maxmind.com/download/geoip/database/asnum/GeoIPASNum2.zip
-unzip GeoIPASNum2.zip
+# cd /tmp
+# rm -f GeoIPASNum2.*
+# wget http://download.maxmind.com/download/geoip/database/asnum/GeoIPASNum2.zip
+# unzip GeoIPASNum2.zip
 
 SQL="
 	TRUNCATE maxmind

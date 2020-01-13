@@ -22,12 +22,12 @@
   with_items:
     - "{{ base_path }}/{{ project_name }}/requirements.txt"
 
-- name: Get the latest MaxMind CSV
-  unarchive:
-    remote_src: yes
-    src: https://geolite.maxmind.com/download/geoip/database/GeoLite2-ASN-CSV.zip
-    dest: /opt/
-    creates: /opt/GeoIPASNum2.csv
+# name: Get the latest MaxMind CSV
+# unarchive:
+#   remote_src: yes
+#   src: https://geolite.maxmind.com/download/geoip/database/GeoLite2-ASN-CSV.zip
+#   dest: /opt/
+#   creates: /opt/GeoIPASNum2.csv
 
 - name: Generate Letsencrypt certs
   command: "certbot certonly --standalone -n -d {{ site_fqdn }} -m {{ site_contact }} --agree-tos"
