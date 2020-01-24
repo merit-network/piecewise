@@ -577,7 +577,7 @@ form_fields:
       required: no
       options:
         a_default: "------"
-        b_increase_speed: "Increate speed"
+        b_increase_speed: "Increase speed"
         c_lower_price: "Lower price"
         d_reliablity: "More reliable service"
         e_service: "Better customer service"
