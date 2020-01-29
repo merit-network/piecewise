@@ -486,7 +486,7 @@ form_fields:
         r_york: "York"
   7:
     survey_zipcode:
-      field_type: String
+      field_type: text
       db_type: String
       name: survey_zipcode
       id: survey_zipcode
