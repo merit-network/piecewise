@@ -492,8 +492,8 @@ form_fields:
         x_sylvan_township: "Sylvan Township"
         y_webster_township: "Webster Township"
         z_york_township: "York Township"
-        aa_ypsilanti_city: "Ypsilanti (City)"
-        bb_ypsilanti_township: "Ypsilanti Township"
+        zz_ypsilanti_city: "Ypsilanti (City)"
+        zzz_ypsilanti_township: "Ypsilanti Township"
   7:
     survey_zipcode:
       field_type: text
