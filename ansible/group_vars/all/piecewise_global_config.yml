@@ -485,6 +485,16 @@ form_fields:
         q_webster: "Webster"
         r_york: "York"
   7:
+    survey_zipcode:
+      field_type: String
+      db_type: String
+      name: survey_zipcode
+      id: survey_zipcode
+      class: "survey-address-field"
+      text: "Zipcode"
+      title: "Zipcode"
+      required: yes
+  8:
     survey_device:
       field_type: select_list
       page: 1
@@ -502,7 +512,7 @@ form_fields:
         d_computer_wired: "Computer  (wired internet)"
         e_computer_tablet_wifi: "Computer/Tablet  (wifi)"
         f_computer_table_hotspot: "Computer/Tablet (cellular hotspot)"
-  8:
+  9:
     survey_service_type:
       field_type: select_list
       page: 1
@@ -522,7 +532,7 @@ form_fields:
         f_mobile: "Celluar Data Plan"
         g_other: "Other"
         h_unknown: "Unknown"
-  9:
+  10:
     survey_provider:
       field_type: select_list
       page: 1
@@ -543,7 +553,7 @@ form_fields:
         g_dish: "Dish Network"
         h_sprint: "Sprint / T-Mobile"
         i_unknown: "Unknown"
-  10:
+  11:
     survey_subscribe_upload:
       field_type: text
       page: 1
@@ -554,7 +564,7 @@ form_fields:
       text: "To the best of your knowledge, what upload speed do you currently subscribe to?  (eg 10 Mbps down, 1 Mbps up)?  Please leave this blank if you do not know."
       title: "To the best of your knowledge, what upload speed do you currently subscribe to?  (eg 10 Mbps down, 1 Mbps up)?  Please leave this blank if you do not know."
       required: no
-  11:
+  12:
     survey_subscribe_download:
       field_type: text
       page: 1
@@ -565,7 +575,7 @@ form_fields:
       text: "To the best of your knowledge, what download speed do you currently subscribe to?  (eg 10 Mbps down, 1 Mbps up)?  Please leave this blank if you do not know."
       title: "To the best of your knowledge, what download speed do you currently subscribe to?  (eg 10 Mbps down, 1 Mbps up)?  Please leave this blank if you do not know."
       required: no
-  12:
+  13:
     survey_improve:
       field_type: select_list 
       page: 1
@@ -583,7 +593,7 @@ form_fields:
         d_reliablity: "More reliable service"
         e_service: "Better customer service"
         f_nothing: "Nothing"
-  13:
+  14:
     survey_current_cost:
       field_type: select_list
       page: 1
@@ -602,7 +612,7 @@ form_fields:
         e_76_to_100: "$76-100/month"
         f_over_100: "$100+/month"
         g_unknown: "I don't know"
-  14:
+  15:
     survey_max_cost:
       field_type: select_list
       page: 1
@@ -621,7 +631,7 @@ form_fields:
         e_76_to_100: "$76-100/month"
         f_over_100: "$100+/month"
         g_unknown: "I don't know"
-  15:
+  16:
     survey_new_carrier:
       field_type: select_list
       page: 1
@@ -640,7 +650,7 @@ form_fields:
         e_somewhat_willing: "Somewhat willing"
         f_extremely_willing: "Extremely willing"
         g_unknown: "I don't know"
-  16:
+  17:
     survey_satisfaction:
       field_type: select_list
       page: 1
@@ -658,7 +668,7 @@ form_fields:
         d_neutral: "Neutral"
         e_dissatisfied: "Dissatisfied"
         f_very_dissatisfied: "Very dissatisfied"
-  17:
+  18:
     survey_usage_homework:
       field_type: select_list
       page: 1
@@ -672,7 +682,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  18:
+  19:
     survey_usage_web_email:
       field_type: select_list
       page: 1
@@ -686,7 +696,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  19:
+  20:
     survey_usage_education:
       field_type: select_list
       page: 1
@@ -700,7 +710,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  20:
+  21:
     survey_usage_job_search:
       field_type: select_list
       page: 1
@@ -714,7 +724,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  21:
+  22:
     survey_usage_remote_work:
       field_type: select_list
       page: 1
@@ -728,7 +738,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  22:
+  23:
     survey_usage_social_media:
       field_type: select_list
       page: 1
@@ -742,7 +752,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  23:
+  24:
     survey_usage_shopping:
       field_type: select_list
       page: 1
@@ -756,7 +766,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  24:
+  25:
     survey_usage_research:
       field_type: select_list
       page: 1
@@ -770,7 +780,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  25:
+  26:
     survey_usage_video_share:
       field_type: select_list
       page: 1
@@ -784,7 +794,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  26:
+  27:
     survey_usage_healthcare:
       field_type: select_list
       page: 1
@@ -798,7 +808,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  27:
+  28:
     survey_usage_banking:
       field_type: select_list
       page: 1
@@ -812,7 +822,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  28:
+  29:
     survey_usage_video_stream:
       field_type: select_list
       page: 1
@@ -826,7 +836,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  29:
+  30:
     survey_usage_gaming:
       field_type: select_list
       page: 1
@@ -840,7 +850,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  30:
+  31:
     survey_usage_gov_services:
       field_type: select_list
       page: 1
@@ -854,7 +864,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  31:
+  32:
     survey_better_access_homework:
       field_type: select_list
       page: 1
@@ -868,7 +878,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  32:
+  33:
     survey_better_access_web_email:
       field_type: select_list
       page: 1
@@ -882,7 +892,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  33:
+  34:
     survey_better_access_education:
       field_type: select_list
       page: 1
@@ -896,7 +906,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  34:
+  35:
     survey_better_access_job_search:
       field_type: select_list
       page: 1
@@ -910,7 +920,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  35:
+  36:
     survey_better_access_remote_work:
       field_type: select_list
       page: 1
@@ -924,7 +934,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  36:
+  37:
     survey_better_access_social_media:
       field_type: select_list
       page: 1
@@ -938,7 +948,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  37:
+  38:
     survey_better_access_shopping:
       field_type: select_list
       page: 1
@@ -952,7 +962,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  38:
+  39:
     survey_better_access_research:
       field_type: select_list
       page: 1
@@ -966,7 +976,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  39:
+  40:
     survey_better_access_video_share:
       field_type: select_list
       page: 1
@@ -980,7 +990,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  40:
+  41:
     survey_better_access_healthcare:
       field_type: select_list
       page: 1
@@ -994,7 +1004,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  41:
+  42:
     survey_better_access_banking:
       field_type: select_list
       page: 1
@@ -1008,7 +1018,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  42:
+  43:
     survey_better_access_video_stream:
       field_type: select_list
       page: 1
@@ -1022,7 +1032,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  43:
+  44:
     survey_better_acccess_gaming:
       field_type: select_list
       page: 1
@@ -1036,7 +1046,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  44:
+  45:
     survey_better_acccess_gov_services:
       field_type: select_list
       page: 1
@@ -1050,7 +1060,7 @@ form_fields:
         a_default: "------"
         b_yes: "Yes"
         c_no: "No"
-  45:
+  46:
     survery_sufficient_service:
       field_type: select_list
       page: 1
@@ -1066,7 +1076,7 @@ form_fields:
         c_no: "No"
         d_maybe: "Maybe"
         e_unknown: "I don't know"
-  46:
+  47:
     survey_no_residents:
       field_type: select_list
       page: 1
@@ -1088,7 +1098,7 @@ form_fields:
         b_7: "7"
         b_8: "8"
         b_9: "9+"
-  47:
+  48:
     survey_k12_students:
       field_type: select_list
       page: 1
