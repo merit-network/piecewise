@@ -654,8 +654,10 @@ function runTest() {
         }
       });
 
-      let $parcel_container_offset = $('#container-survey_parcel_id').offset();      
-      window.scrollTo($parcel_container_offset.left, $parcel_container_offset.top);
+      if ($('.form-field.has-error').length >= 1) {
+        let $error_offset = $('.form-field.has-error').first().offset();
+        window.scrollTo($error_offset.left, $error_offset.top);
+      }
 
       return;
     }
