@@ -647,10 +647,16 @@ function runTest() {
     let parcel_id = $('#survey_parcel_id').val();
     if (parcel_id === "") {
       $('.survey-address-field').each(function() {
+        let $container = $('#container-' + $(this).attr('id'));
+
         if ($(this).val() === "" || $(this).val() === "a_default") {
-          let $container = $('#container-' + $(this).attr('id'));
-          $container.addClass('has-error');
-          $container.find('.field-container:first-child').append($('<small/>', {class: 'text-muted text-danger', text: '(This field is required without a parcel id.)'}));
+          if (!$container.hasClass('has-error')) {
+            $container.addClass('has-error');
+            $container.find('.field-container:first-child').append($('<small/>', {class: 'text-muted text-danger', text: '(This field is required without a parcel id.)'}));
+          }
+        } else {
+          $container.removeClass('has-error');
+          $container.find('.field-container:first-child small.text-danger').remove();
         }
       });
 
