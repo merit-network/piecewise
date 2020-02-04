@@ -657,9 +657,8 @@ function runTest() {
       if ($('.form-field.has-error').length >= 1) {
         let $error_offset = $('.form-field.has-error').first().offset();
         window.scrollTo($error_offset.left, $error_offset.top);
+        return;
       }
-
-      return;
     }
   }
 
