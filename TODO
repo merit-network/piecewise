@@ -7,4 +7,4 @@ Washtenaw County Broadband:
     ✔ add data ingest cronjob @done(20-01-13 13:44)
     ✔ document server setup(s) in confluence @done(20-01-13 15:04)
     ✔ setup backup volume and rsync cronjob @done(20-01-13 13:58)
-    ☐ verify backups are running for postgres
+    ✔ verify backups are running for postgres @done(20-02-21 09:21)
