@@ -407,9 +407,11 @@ function setPolygonLayer(layer, year, month, metric, mode, resolution) {
   getLayerData(dataUrl, function(response) {
     var lookup = {};
 
+    /*
     if (response.features.length <= 0) {
       $('.map-warning').removeClass('hidden');
     }
+    */
 
     response.features.forEach(function(row) {
       lookup[row.properties[geoLayers[layer]['dbKey']]] = row.properties;
