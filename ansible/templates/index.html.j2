@@ -5,14 +5,11 @@
   <meta charset='utf-8' />
   <title>{{ site_name }}</title>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.css' rel='stylesheet' />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link href='/css/ndt_d3.css' rel='stylesheet' />
   <link href="/css/jquery-ui-slider-pips.css" rel="stylesheet" />
   <link href='/css/jquery-ui.min.css' rel='stylesheet' />
   <link href='/css/mlab.css' rel='stylesheet' />
-  <script src='//api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.js'></script>
-  <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
   <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src='/js/mlab.js'></script>
   <script src='/js/ndt.js'></script>
@@ -180,6 +177,7 @@
               performance.</p>
         </ol>
 
+        <!--  TODO: [04/21/2020 schelcj] - remove the reference to data.seatle.gov -->
         <h3>What data does this test collect, and how will it be used?</h3>
         <p>Before you take the test, you will be asked for your location and some basic information about your connection. You can also share what speeds are
           advertised under your current contract. This data will be stored in a private database, combined with other results, and published to the map and to
@@ -316,11 +314,6 @@
                     <h3 class="league-gothic">{{ thank_you_heading }}</h3>
                     <strong>{{ thank_you_message }}</strong><br /><br />
                     <strong>{{ next_action_message }}</strong>
-                    <ul>
-                      <li><a href="#" onclick="showMap()">{{ next_action_show_map_text }}</a></li>
-                      <li><a href="{{ next_action_learn_about_link }}" target="_parent">{{ next_action_learn_about_text }}</a></li>
-                      <li>{{ next_action_social_share_text }}</li>
-                    </ul>
                     <div id="socialshare">
                       <!-- Social Button HTML -->
                       {% if social_share_twitter is not none -%}
@@ -364,9 +357,6 @@
       <div id="icons">
         <div id="take-test" onclick="runTest()">
           <span class="button-label">{{ icon_test_label }}</span>
-        </div>
-        <div id="explore-map" onclick="showMap()">
-          <span class="button-label">{{ icon_browse_label }}</span>
         </div>
         <div id="learn-more">
           <a href="{{ icon_learn_link }}" target="_parent"><span class="button-label">{{ icon_learn_label }}</span></a>
