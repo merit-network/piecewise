@@ -81,7 +81,7 @@
   become: true
   become_user: postgres
 
-## Apply local server files and customizations
+# Apply local server files and customizations
 - name: Copy geo data to server
   copy:
     src: "../local_customizations/geofiles"

@@ -5,9 +5,9 @@
     become_user: root
 - name: Fetch updated piecewise repo
   git:
-    repo: https://github.com/schelcj/piecewise.git 
+    repo: https://github.com/merit-network/piecewise.git 
     dest: /opt/piecewise.git/
-    version: mi_moonshot
+    version: mi_moonshot_sw
 - name: Deploy updated piecewise code
   file:
     src: /opt/piecewise.git/piecewise

@@ -27,7 +27,7 @@ project_name: piecewise
 # TO DO: may no longer be needed. confirm.
 #
 
-remote: https://github.com/schelcj
+remote: https://github.com/merit-network
 # !REQUIRED!
 #
 # remote
@@ -35,7 +35,7 @@ remote: https://github.com/schelcj
 #       For example: https://github.com/opentechinstitute
 # TO DO: may no longer be needed. confirm.
 
-piecewise_commit: mi_moonshot_wc
+piecewise_commit: mi_moonshot_sw
 # !REQUIRED!
 #
 # piecewise_commit
@@ -63,7 +63,7 @@ database_user_group: postgres
 #       the database user. These can be safely left as the default, unless you desire to
 #       change them.
 
-site_fqdn: merit-piecewise-test03.merit.edu
+site_fqdn: merit-piecewise-test04.merit.edu # TODO: [04/21/2020 schelcj] - need real url
 # !REQUIRED!
 #
 # site_fqdn
@@ -398,758 +398,27 @@ form_fields:
       name: survey_participant_id
       id: survey_participant_id
       class: ""
-      text: "Unique participant id"
-      title: "Unique participant id"
+      text: "If you’ve been provided a survey ID by your local government, school district, etc. , please enter it below. If you did not receive an ID, please move onto question 2."
+      title: "If you’ve been provided a survey ID by your local government, school district, etc. , please enter it below. If you did not receive an ID, please move onto question 2."
       required: yes
-  2:
-    survey_parcel_id:
-      field_type: text
-      page: 1
-      db_type: String
-      name: suvery_parcel_id
-      id: survey_parcel_id
-      class: ""
-      text: "Property parcel ID (Format: XX-XX-XX-XXX-XXX)"
-      title: "Property parcel ID (Format: XX-XX-XX-XXX-XXX)"
-      required: yes
-  3:
-    survey_street_name:
-      field_type: text
-      page: 1
-      db_type: String
-      name: survey_street_name
-      id: survey_street_name
-      class: "survey-address-field"
-      text: "Please only include street name. (e.g.  Main NOT Main St.)"
-      title: "Please only include street name. (e.g.  Main NOT Main St.)"
-      required: yes
-  4:
-    survey_street_number:
-      field_type: text
-      page: 1
-      db_type: String
-      name: survey_street_number
-      id: survey_street_number
-      class: "survey-address-field"
-      text: "Please include the street number"
-      title: "Please include the street number"
-      required: yes
-  5:
-    survey_street_direction:
-      field_type: select_list
-      db_type: String
-      name: survey_street_direction
-      id: survey_street_direction
-      class: "survey-address-field"
-      text: "Please include the street direction"
-      title: "Please include the street direction"
-      required: yes
-      options:
-        a_default: "------"
-        b_none: "None"
-        c_north: "North"
-        d_south: "South"
-        e_east: "East"
-        f_west: "West"
-        g_north_west: "Northwest"
-        h_north_east: "Northeast"
-        i_south_west: "Southwest"
-        j_south_east: "Southeast"
-  6:
-    survey_township:
-      field_type: select_list
-      db_type: String
-      name: survey_township
-      id: survey_township
-      class: "survey-address-field"
-      text: "City, Village, or Township"
-      title: "City, Village, or Township"
-      required: yes
-      options:
-        a_default: "------"
-        b_ann_arbor_city: "Ann Arbor (City)"
-        c_ann_arbor_township: "Ann Arbor Township"
-        d_augusta_township: "Augusta Township"
-        e_barton_hils_village: "Barton Hills (Village)"
-        f_bridgewater_township: "Bridgewater Township"
-        g_chelsea_city: "Chelsea (City)"
-        h_dexter_city: "Dexter (City)"
-        i_dexter_township: "Dexter Township"
-        j_freedom_township: "Freedom Township"
-        k_lima_township: "Lima Township"
-        l_lodi_township: "Lodi Township"
-        m_lyndon_township: "Lyndon Township"
-        n_manchester_village: "Manchester (Village)"
-        o_manchester_township: "Manchester Township"
-        p_northfield_township: "Northfield Township"
-        q_pittsfield_township: "Pittsfield Township"
-        r_salem_township: "Salem Township"
-        s_saline_city: "Saline (City)"
-        t_saline_township: "Saline Township"
-        u_scio_township: "Scio Township"
-        v_sharon_township: "Sharon Township"
-        w_superior_township: "Superior Township"
-        x_sylvan_township: "Sylvan Township"
-        y_webster_township: "Webster Township"
-        z_york_township: "York Township"
-        zz_ypsilanti_city: "Ypsilanti (City)"
-        zzz_ypsilanti_township: "Ypsilanti Township"
-  7:
-    survey_zipcode:
-      field_type: text
-      db_type: String
-      name: survey_zipcode
-      id: survey_zipcode
-      class: "survey-address-field"
-      text: "Zipcode"
-      title: "Zipcode"
-      required: yes
-  8:
-    survey_device:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_device
-      id: survey_device
-      class: "" 
-      text: "What device are you using to complete this survey?"
-      title: "What device are you using to complete this survey?"
-      required: no
-      options:
-        a_default: "------"
-        b_smartphone_home_wifi: "Smartphone to home wifi"
-        c_smartphone_cell_data: "Smartphone to cellular data plan"
-        d_computer_wired: "Computer  (wired internet)"
-        e_computer_tablet_wifi: "Computer/Tablet  (wifi)"
-        f_computer_table_hotspot: "Computer/Tablet (cellular hotspot)"
-  9:
-    survey_service_type:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_service_type
-      id: survey_service_type
-      class: ""
-      text: "To the best of your knowledge, how do you currently get internet access at your property?"
-      title: "To the best of your knowledge, how do you currently get internet access at your property?"
-      required: no
-      options:
-        a_default: "------"
-        b_fiber: "Fiber"
-        c_cable: "Cable"
-        d_dsl: "DSL"
-        e_satellite: "Satellite"
-        f_mobile: "Celluar Data Plan"
-        g_other: "Other"
-        h_unknown: "Unknown"
-  10:
-    survey_provider:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_provider
-      id: survey_provider
-      class: ""
-      text: "Which company provides your current internet service?"
-      title: "Which company provides your current internet service?"
-      required: no
-      options:
-        a_default: "------"
-        b_spectrum: "Charter/Spectrum"
-        c_att: "AT&T"
-        d_verizon: "Verizon"
-        e_hughes: "HughesNet"
-        f_comcast: "Comcast Xfinity"
-        g_dish: "Dish Network"
-        h_sprint: "Sprint / T-Mobile"
-        i_unknown: "Unknown"
-        j_other: "Other"
-  11:
-    survey_subscribe_upload:
-      field_type: text
-      page: 1
-      db_type: String
-      name: survey_subscribe_upload
-      id: survey_subscribe_upload
-      class: ""
-      text: "To the best of your knowledge, what upload speed do you currently subscribe to?  (eg 10 Mbps down, 1 Mbps up)?  Please leave this blank if you do not know."
-      title: "To the best of your knowledge, what upload speed do you currently subscribe to?  (eg 10 Mbps down, 1 Mbps up)?  Please leave this blank if you do not know."
-      required: no
-  12:
-    survey_subscribe_download:
-      field_type: text
-      page: 1
-      db_type: String
-      name: survey_subscribe_download
-      id: survey_subscribe_download
-      class: ""
-      text: "To the best of your knowledge, what download speed do you currently subscribe to?  (eg 10 Mbps down, 1 Mbps up)?  Please leave this blank if you do not know."
-      title: "To the best of your knowledge, what download speed do you currently subscribe to?  (eg 10 Mbps down, 1 Mbps up)?  Please leave this blank if you do not know."
-      required: no
-  13:
-    survey_improve:
-      field_type: select_list 
-      page: 1
-      db_type: String
-      name: survey_improve
-      id: survey_improve
-      class: ""
-      text: "What would you most like to see improved on your current internet service?"
-      title: "What would you most like to see improved on your current internet service?"
-      required: no
-      options:
-        a_default: "------"
-        b_increase_speed: "Increase speed"
-        c_lower_price: "Lower price"
-        d_reliablity: "More reliable service"
-        e_service: "Better customer service"
-        f_nothing: "Nothing"
-  14:
-    survey_current_cost:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_current_cost
-      id: survey_current_cost
-      class: ""
-      text: "How much does your internet service cost per month?"
-      title: "How much does your internet service cost per month?"
-      required: no
-      options:
-        a_default: "------"
-        b_less_than_25: "Less than $25/month"
-        c_25_to_50: "$25-50/month"
-        d_51_to_75: "$51-75/month"
-        e_76_to_100: "$76-100/month"
-        f_over_100: "$100+/month"
-        g_unknown: "I don't know"
-  15:
-    survey_max_cost:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_max_cost
-      id: survey_max_cost
-      class: ""
-      text: "What is the maximum monthly price you are willing to pay for 100 Mbps (high speed internet) service?"
-      title: "What is the maximum monthly price you are willing to pay for 100 Mbps (high speed internet) service?"
-      required: no
-      options:
-        a_default: "------"
-        b_less_than_25: "Less than $25/month"
-        c_25_to_50: "$25-50/month"
-        d_51_to_75: "$51-75/month"
-        e_76_to_100: "$76-100/month"
-        f_over_100: "$100+/month"
-        g_unknown: "I don't know"
-  16:
-    survey_new_carrier:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_new_carrier
-      id: survey_new_carrier
-      class: ""
-      text: "For the price indicated above, how willing are you to select a new carrier for 100 Mbps service?"
-      title: "For the price indicated above, how willing are you to select a new carrier for 100 Mbps service?"
-      required: no
-      options:
-        a_default: "------"
-        b_not_willing: "Not at all willing"
-        c_somewhat_hesitant: "Somewhat hesitant"
-        d_neutral: "Neutral"
-        e_somewhat_willing: "Somewhat willing"
-        f_extremely_willing: "Extremely willing"
-        g_unknown: "I don't know"
-  17:
-    survey_satisfaction:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_satisfaction
-      id: survey_satisfaction
-      class: ""
-      text: "Overall – considering performance, cost, and any other factors – how satisfied are you with your internet service provider?"
-      title: "Overall – considering performance, cost, and any other factors – how satisfied are you with your internet service provider?"
-      required: no
-      options:
-        a_default: "------"
-        b_very_satisfied: "Very satisfied"
-        c_satisfied: "Satisfied"
-        d_neutral: "Neutral"
-        e_dissatisfied: "Dissatisfied"
-        f_very_dissatisfied: "Very dissatisfied"
-  18:
-    survey_usage_homework:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_usage_homework
-      id: survey_usage_homework
-      class: "cb-usage"
-      text: "Homework"
-      title: "I can currently use my internet service to do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  19:
-    survey_usage_web_email:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_usage_web_email
-      id: survey_usage_web_email
-      class: "cb-usage"
-      text: "Browse the web/email"
-      title: "I can currently use my internet service to do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  20:
-    survey_usage_education:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_usage_education
-      id: survey_usage_education
-      class: "cb-usage"
-      text: "Continuing education"
-      title: "I can currently use my internet service to do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  21:
-    survey_usage_job_search:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_usage_job_search
-      id: survey_usage_job_search
-      class: "cb-usage"
-      text: "Job search"
-      title: "I can currently use my internet service to do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  22:
-    survey_usage_remote_work:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_usage_remote_work
-      id: survey_usage_remote_work
-      class: "cb-usage"
-      text: "Working remotely"
-      title: "I can currently use my internet service to do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  23:
-    survey_usage_social_media:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_usage_social_media
-      id: survey_usage_social_media
-      class: "cb-usage"
-      text: "Social Media"
-      title: "I can currently use my internet service to do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  24:
-    survey_usage_shopping:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_usage_shopping
-      id: survey_usage_shopping
-      class: "cb-usage"
-      text: "Online shopping"
-      title: "I can currently use my internet service to do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  25:
-    survey_usage_research:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_usage_research
-      id: survey_usage_research
-      class: "cb-usage"
-      text: "Research"
-      title: "I can currently use my internet service to do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  26:
-    survey_usage_video_share:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_usage_video_share
-      id: survey_usage_video_share
-      class: "cb-usage"
-      text: "Upload/share video"
-      title: "I can currently use my internet service to do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  27:
-    survey_usage_healthcare:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_usage_healthcare
-      id: survey_usage_healthcare
-      class: "cb-usage"
-      text: "Healthcare"
-      title: "I can currently use my internet service to do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  28:
-    survey_usage_banking:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_usage_banking
-      id: survey_usage_banking
-      class: "cb-usage"
-      text: "Online banking/bill pay"
-      title: "I can currently use my internet service to do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  29:
-    survey_usage_video_stream:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_usage_video_stream
-      id: survey_usage_video_stream
-      class: "cb-usage"
-      text: "Watch/stream video"
-      title: "I can currently use my internet service to do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  30:
-    survey_usage_gaming:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_usage_gaming
-      id: survey_usage_gaming
-      class: "cb-usage"
-      text: "Gaming"
-      title: "I can currently use my internet service to do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  31:
-    survey_usage_gov_services:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_usage_gov_services
-      id: survey_usage_gov_services
-      class: "cb-usage"
-      text: "Government services"
-      title: "I can currently use my internet service to do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  32:
-    survey_better_access_homework:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_better_access_homework
-      id: survey_better_access_homework
-      class: "cb-ba"
-      text: "Homework"
-      title: "If I had better internet access I would do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  33:
-    survey_better_access_web_email:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_better_access_web_email
-      id: survey_better_access_web_email
-      class: "cb-ba"
-      text: "Browse the web/email"
-      title: "If I had better internet access I would do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  34:
-    survey_better_access_education:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_better_access_education
-      id: survey_better_access_education
-      class: "cb-ba"
-      text: "Continuing education"
-      title: "If I had better internet access I would do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  35:
-    survey_better_access_job_search:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_better_access_job_search
-      id: survey_better_access_job_search
-      class: "cb-ba"
-      text: "Job search"
-      title: "If I had better internet access I would do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  36:
-    survey_better_access_remote_work:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_better_access_remote_work
-      id: survey_better_access_remote_work
-      class: "cb-ba"
-      text: "Working remotely"
-      title: "If I had better internet access I would do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  37:
-    survey_better_access_social_media:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_better_access_social_media
-      id: survey_better_access_social_media
-      class: "cb-ba"
-      text: "Social Media"
-      title: "If I had better internet access I would do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  38:
-    survey_better_access_shopping:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_better_access_shopping
-      id: survey_better_access_shopping
-      class: "cb-ba"
-      text: "Online shopping"
-      title: "If I had better internet access I would do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  39:
-    survey_better_access_research:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_better_acccess_research
-      id: survey_better_access_research
-      class: "cb-ba"
-      text: "Research"
-      title: "If I had better internet access I would do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  40:
-    survey_better_access_video_share:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_better_access_video_share
-      id: survey_better_access_video_share
-      class: "cb-ba"
-      text: "Upload/share video"
-      title: "If I had better internet access I would do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  41:
-    survey_better_access_healthcare:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_better_access_healthcare
-      id: survey_better_access_healthcare
-      class: "cb-ba"
-      text: "Healthcare"
-      title: "If I had better internet access I would do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  42:
-    survey_better_access_banking:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_better_access_banking
-      id: survey_better_access_banking
-      class: "cb-ba"
-      text: "Online banking/bill pay"
-      title: "If I had better internet access I would do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  43:
-    survey_better_access_video_stream:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_better_access_video_stream
-      id: survey_better_access_video_stream
-      class: "cb-ba"
-      text: "Watch/stream video"
-      title: "If I had better internet access I would do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  44:
-    survey_better_acccess_gaming:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_better_access_gaming
-      id: survey_better_access_gaming
-      class: "cb-ba"
-      text: "Gaming"
-      title: "If I had better internet access I would do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  45:
-    survey_better_acccess_gov_services:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_better_access_gov_services
-      id: survey_better_acccess_gov_services
-      class: "cb-ba"
-      text: "Government services"
-      title: "If I had better internet access I would do the following online (select all that apply)"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-  46:
-    survery_sufficient_service:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_sufficient_service
-      id: survey_sufficient_service
-      class: ""
-      text: "In your opinion, is there sufficient internet service provider options available to you at your location?"
-      title: "In your opinion, is there sufficient internet service provider options available to you at your location?"
-      options:
-        a_default: "------"
-        b_yes: "Yes"
-        c_no: "No"
-        d_maybe: "Maybe"
-        e_unknown: "I don't know"
-  47:
-    survey_no_residents:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_no_residents
-      id: survey_no_residents
-      class: ""
-      text: "If this is a residential address, how many persons live at this address?"
-      title: "If this is a residential address, how many persons live at this address?"
-      options:
-        a_default: "------"
-        b_0: "0"
-        b_1: "1"
-        b_2: "2"
-        b_3: "3"
-        b_4: "4"
-        b_5: "5"
-        b_6: "6"
-        b_7: "7"
-        b_8: "8"
-        b_9: "9+"
-  48:
-    survey_k12_students:
-      field_type: select_list
-      page: 1
-      db_type: String
-      name: survey_k12_students
-      id: survey_k12_students
-      class: ""
-      text: "How many K-12 students are at this address?"
-      title: "How many K-12 students are at this address?"
-      options:
-        a_default: "------"
-        b_0: "0"
-        b_1: "1"
-        b_2: "2"
-        b_3: "3"
-        b_4: "4"
-        b_5: "5"
-        b_6: "6"
-        b_7: "7"
-        b_8: "8"
-        b_9: "9+"
 
 ####################
 # 3.3 Website Text #
 ####################
 # The section below allows you to customize various text and other elements of the website.
 
-site_name: "Washtenaw County Broadband Task Force"
+site_name: "Michigan Moonshot"
 
 # #DEFAULT#
 #
 # Defines the HTML page title element
 
 intro_text: >
-  In an effort to expand broadband services to all residents in Washtenaw County the Washtenaw County Broadband Task Force has been formed. In the pursuit of grants to fund these infrastructure expansion efforts we need to collect data about broadband access available to residents.
+  The Michigan Moonshot is a statewide broadband initiative run by Merit Network, a non-profit research and education network, in partnership with the Quello Center at Michigan State University. The goal of this survey is to identify areas of Michigan that do not have, or have poor broadband Internet service. Merit  not a direct residential broadband provider, information gathered from this survey will help us propel partnerships and collaborations within Michigan Moonshot  to  move community broadband connectivity forward, together. 
 
+# TODO: [04/21/2020 schelcj] - what goes here?
 instructions_text: >
-  More than 380,000 homes in rural Michigan do not have access to broadband. Accurate connectivity data is the first step in assessing community needs and building support for funding sources. Current FCC data aggregation processes may misrepresent broadband availability. These can be overcome by collecting consumer-sourced data through surveys such as this one.
-
-  The Measurement Lab (M-Lab) platform is run by the scientific community. We make all test results publicly available via the MeasurementLab.net website to help promote Internet research. M-Lab's Network Diagnostic Tool collects a number of measures of different facets of your Internet connection. The information published includes each device’s IP address, but does not include personal identifying information about you as an Internet user.
+  TODO
 
 # #DEFAULT#
 #
@@ -1175,15 +444,16 @@ rtt_result_label: "Minimum Round Trip Time:"
 rtt_result_unit: "ms"
 thank_you_heading: "Thank you!"
 thank_you_message: >
-  Thank you for completing this survey and speed test. Please remember you DO NOT need to return the paper survey if you completed the online version. Your test results will be combined with others and will appear on the map soon.
+  Thank you for your participation! Learn more about the Michigan Moonshot at <a href="https://www.merit.edu/moonshot">Merit.edu/Moonshot</a>.
+
 # #DEFAULT#
 #
 
 # 'next_action_' variables define the action items present to the user after they run the test.
 next_action_message: "What do you want to do next?"
-next_action_show_map_text: "View all results to-date on a map of Michigan"
+# next_action_show_map_text: "View all results to-date on a map of Michigan"
 next_action_learn_about_text: "Learn more about this test and how to improve your speed"
-next_action_learn_about_link: "https://broadbandtest.us/"
+next_action_learn_about_link: "https://broadbandtest.us/" # TODO: [04/21/2020 schelcj] - do we need this?
 next_action_social_share_text: "Share this test with your friends and neighbors"
 # #DEFAULT#
 #
@@ -1207,25 +477,25 @@ social_share_email: "mailto:?subject=Help%20bring%20internet%20to%20rural%20Mich
 # 'icon_' variables set the text values and '?' link accompanying icons on the initial map display.
 icon_test_label: "Take the Speed Test"
 icon_test_alt_text: "Take the Speed Test"
-icon_browse_label: "Browse the Broadband Map"
-icon_browse_alt_text: "Browse the Broadband Map"
+# icon_browse_label: "Browse the Broadband Map"
+# icon_browse_alt_text: "Browse the Broadband Map"
 icon_learn_label: "Learn More"
 icon_learn_alt_text: "Learn more about this test."
-icon_learn_link: "https://broadbandtest.us/"
+icon_learn_link: "https://broadbandtest.us/" # TODO: [04/21/2020 schelcj] - do we want this still?
 # #DEFAULT#
 #
 
 # 'mapview_icon_' variables set the text values and '?' link on the mapview display
-mapview_icon_test_alt_text: "Take the Speed Test"
-mapview_icon_learn_alt_text: "Learn more about this test."
-mapview_icon_learn_link: "https://broadbandtest.us/"
+# mapview_icon_test_alt_text: "Take the Speed Test"
+# mapview_icon_learn_alt_text: "Learn more about this test."
+# mapview_icon_learn_link: "https://broadbandtest.us/"
 # #DEFAULT#
 #
 
 # The two variables below control where Leaflet map controls are placed in the UI.
 # They should remain unchanged for now. More work on positioning for Leaflet elements will follow.
-mapcontrols_zoom_pos: topright
-mapcontrols_legend_pos: bottomleft
+# mapcontrols_zoom_pos: topright
+# mapcontrols_legend_pos: bottomleft
 # #DEFAULT#
 #
 #-------------------------------------------->>
