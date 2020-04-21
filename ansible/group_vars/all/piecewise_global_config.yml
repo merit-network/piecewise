@@ -393,14 +393,218 @@ form_fields:
   1:
     survey_participant_id:
       field_type: text
-      page: 1
       db_type: Integer
       name: survey_participant_id
       id: survey_participant_id
       class: ""
       text: "If you’ve been provided a survey ID by your local government, school district, etc. , please enter it below. If you did not receive an ID, please move onto question 2."
       title: "If you’ve been provided a survey ID by your local government, school district, etc. , please enter it below. If you did not receive an ID, please move onto question 2."
+      required: yes 
+  2:
+    survey_property_type:
+      field_type: select_list
+      db_type: String
+      name: survey_property_type
+      id: survey_property_type
+      class: ""
+      text: "Please indicate if this is a business or a residential property"
+      title: "Please indicate if this is a business or a residential property"
       required: yes
+      options:
+        a_default: "------"
+        b_business: "Business"  
+        c_residential: "Residential"
+  3:
+    survey_address:
+      field_type: text
+      db_type: String
+      name: survey_address
+      id: survey_address
+      class: ""
+      text: "Please enter the postal address of your location. If this is a business, please proceed to question #9 after providing address information below"
+      title: "Please enter the postal address of your location. If this is a business, please proceed to question #9 after providing address information below"
+  4:
+    survey_no_residents:
+      field_type: select_list
+      db_type: String
+      name: survey_no_residents
+      id: survey_no_residents
+      class: ""
+      text: "More people in the home can increase the need for faster Internet, how many people currently live at this address?"
+      title: "More people in the home can increase the need for faster Internet, how many people currently live at this address?"
+      options:
+        a_default: "------"
+        b_0: "0"
+        b_1: "1"
+        b_2: "2"
+        b_3: "3"
+        b_4: "4"
+        b_5: "5"
+        b_6: "6"
+        b_7: "7"
+        b_8: "8"
+        b_9: "9+"
+  5:
+    survey_no_minors:
+      field_type: select_list
+      db_type: String
+      name: survey_no_minors
+      id: survey_no_minors
+      class: ""
+      text: "Children who attend school often have extra need for home Internet access, how many people currently living at this address are under the age of 18?"
+      title: "Children who attend school often have extra need for home Internet access, how many people currently living at this address are under the age of 18?"
+      options:
+        a_default: "------"
+        b_0: "0"
+        b_1: "1"
+        b_2: "2"
+        b_3: "3"
+        b_4: "4"
+        b_5: "5"
+        b_6: "6"
+        b_7: "7"
+        b_8: "8"
+        b_9: "9+"
+  6:
+    survey_no_post_secondary:
+      field_type: select_list
+      db_type: String
+      name: survey_no_post_secondary
+      id: survey_no_post_secondary
+      class: ""
+      text: "How many people living at this address currently take college or university courses (even if those courses are not online)?"
+      title: "How many people living at this address currently take college or university courses (even if those courses are not online)?"
+      options:
+        a_default: "------"
+        b_0: "0"
+        b_1: "1"
+        b_2: "2"
+        b_3: "3"
+        b_4: "4"
+        b_5: "5"
+        b_6: "6"
+        b_7: "7"
+        b_8: "8"
+        b_9: "9+"
+  7:
+    survey_no_devices:
+      field_type: select_list
+      db_type: String
+      name: survey_no_devices
+      id: survey_no_devices
+      class: ""
+      text: "Sometimes people need a computer before they want Internet access at home, if any, how many working computers/laptops/chromebooks do you have at home?"
+      title: "Sometimes people need a computer before they want Internet access at home, if any, how many working computers/laptops/chromebooks do you have at home?"
+      options:
+        a_default: "------"
+        b_0: "0"
+        b_1: "1"
+        b_2: "2"
+        b_3: "3"
+        b_4: "4"
+        b_5: "5"
+        b_6: "6"
+        b_7: "7"
+        b_8: "8"
+        b_9: "9+"
+  8:
+    survey_no_tablets:
+      field_type: select_list
+      db_type: String
+      name: survey_no_tablets
+      id: survey_no_tablets
+      class: ""
+      text: "How many tablets do you have at home? (e.g., iPad, Kindle, Android tablet)"
+      title: "How many tablets do you have at home? (e.g., iPad, Kindle, Android tablet)"
+      options:
+        a_default: "------"
+        b_0: "0"
+        b_1: "1"
+        b_2: "2"
+        b_3: "3"
+        b_4: "4"
+        b_5: "5"
+        b_6: "6"
+        b_7: "7"
+        b_8: "8"
+        b_9: "9+"
+  9:
+    survey_wifi:
+      field_type: select_list
+      db_type: String
+      name: survey_wifi
+      id: survey_wifi
+      class: ""
+      text: "Are you completing this survey over a wifi connection?"
+      title: "Are you completing this survey over a wifi connection?"
+      options:
+        a_default: "------"
+        b_yes: "Yes"
+        c_no: "No"
+        d_dont_know: "I don't know"
+  10:
+    survey_connection_type:
+      field_type: select_list
+      db_type: String
+      name: survey_connection_type
+      id: survey_wifi
+      class: ""
+      text: "To the best of your knowledge, how do you currently get internet access at this property?"
+      title: "To the best of your knowledge, how do you currently get internet access at this property?"
+      required: yes
+      options:
+        a_default: "------"
+        b_fiber: "Fiber"
+        c_cable: "Cable"
+        d_dsl: "DSL"
+        e_sat: "Satellite"
+        f_cell: "Celluar data plan"
+        g_fixed: "Fixed wireless"
+        h_other: "Other"
+        i_dont_know: "I don't know"
+  11:
+    survey_speed:
+      field_type: select_list
+      db_type: String
+      name: survey_speed
+      id: survey_speed
+      class: ""
+      text: "To the best of your knowledge, approximately what speed does your Internet service provide you?"
+      title: "To the best of your knowledge, approximately what speed does your Internet service provide you?"
+      required: yes
+      options:
+        a_default: "------"
+        b_le_25: "Less than 25Mbps"
+        c_ge_25_le_100: "Greater than 25Mbps and less than 100Mpbs"
+        d_ge_100_le_1000: "Greater than 100Mbps and less than 1Gbps"
+        e_ge_1000: "Greater than 1Gbps"
+        f_dont_know: "I don't know"
+  12:
+    survey_satisfaction:
+      field_type: select_list
+      db_type: String
+      name: survey_satisfaction
+      id: survey_satisfaction
+      class: ""
+      text: "Overall – considering performance, cost, and any other factors – how satisfied are you with this internet service provider?"
+      title: "Overall – considering performance, cost, and any other factors – how satisfied are you with this internet service provider?"
+      required: yes
+      options:
+        a_default: "------"
+        b_very_sat: "Very satisfied"
+        c_sat: "Satisfied"
+        d_neutral: "Neutral"
+        e_dis: "Dissatisfied"
+        f_very_dis: "Very dissatisfied"
+  13:
+    survey_email:
+      field_type: text
+      db_type: String
+      name: survey_email
+      id: surey_email
+      class: ""
+      text: "Please provide your email address, so that we may follow up with additional information or questions, if needed."
+      title: "Please provide your email address, so that we may follow up with additional information or questions, if needed."
 
 ####################
 # 3.3 Website Text #
