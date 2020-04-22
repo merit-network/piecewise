@@ -334,10 +334,6 @@ span.ui-slider-handle.ui-state-default.ui-corner-all:focus {
   font-weight: bold;
 }
 
-#approx-loc p {
-  margin:0;
-}
-
 #ndt {
   display:none;
 }
@@ -347,11 +343,6 @@ span.ui-slider-handle.ui-state-default.ui-corner-all:focus {
   font-size: 2em;
   text-transform: uppercase;
   color:#007dc3;
-}
-#sidebar h4 {
-  margin:0 1.3em 5px;
-  font-size: 1em;
-  line-height: 1.42857143;
 }
 
 #ndt h4 {
@@ -1097,10 +1088,6 @@ a.leaflet-popup-close-button {
   overflow: hidden;
 }
 
-#socialshare {
-  margin-left: 3em;
-}
-
 @media(max-width:700px) {
 }
 @media(min-width:701px) {
@@ -1364,10 +1351,12 @@ a.leaflet-popup-close-button {
   .map-warning { max-width: calc(100% - 110px - 20px); }
 }
 
-#container-survey_participant_id {
-  display: none;
-}
-
 .container-has-error {
   border: red 1px solid;
+}
+
+.about {
+  width: 80%;
+  margin: 0 auto 2rem;
+  padding: 1rem;
 }
