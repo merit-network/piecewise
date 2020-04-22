@@ -38,40 +38,102 @@
 
     <div id="header">
       <div id="intro">
-        <p>{{ intro_text }}</p>
+        <p>
+          The Michigan Moonshot is a statewide broadband initiative run by Merit
+          Network, a non-profit research and education network, in partnership
+          with the Quello Center at Michigan State University. The goal of this
+          survey is to identify areas of Michigan that do not have, or have poor
+          broadband Internet service. Merit not a direct residential broadband
+          provider, information gathered from this survey will help us propel
+          partnerships and collaborations within Michigan Moonshot to move
+          community broadband connectivity forward, together.
+        </p>
 
-        <hr />
+        <p>
+          <strong>Your response is critical to these efforts and completing this
+            survey should take five minutes, or less.</strong> Any information
+          submitted will not be sold, but may be used in planning to expand
+          access opportunities with government and local partners. We understand
+          that you may not have all the necessary information to answer each
+          question on this survey, please answer to the best of your ability.
+        </p>
 
         <div class="panel panel-default">
-          <div class="panel-body">
-            <p>For questions concerning this survey please contact:</p>
-
-            <a href="#">TODO: FORMS PAGE LINK</a>
-
-            <p>TODO: MERIT NETWORK CONTACT INFO</p>
+          <div class="panel-body text-center">
+            <h4>For questions concerning this survey please contact:</h4>
+            <a href="https://www.merit.edu/support/contact/">Merit Network</a>
           </div>
         </div>
-
-        <hr />
-
-        <p>{{ instructions_text }}</p>
-        <p><a href="https://www.merit.edu/services/moonshot/" target="_blank" rel="noopener noreferrer">Learn more about the Michigan Moonshot</a></p>
       </div>
     </div>
 
-    <div id="about-merit-network">
+    <div id="about-merit-network" class="about">
+      <details>
+        <summary>About Merit Network</summary>
+
+        <p>
+          Merit Network, Inc. is a nonprofit organization governed by Michigan’s
+          public universities. Merit owns and operates America’s longest-running
+          regional research and education network. In 1966, Michigan’s public
+          universities created Merit as a shared resource to help meet their
+          common need for networking assistance. Since its formation, Merit
+          Network has remained on the forefront of research and education
+          networking expertise and services. Merit provides high-performance
+          networking, cybersecurity and community services to Michigan’s public
+          universities, colleges, K-12 organizations, libraries, state government,
+          healthcare, and other non-profit organizations.
+        </p>
+      </details>
     </div>
 
-    <div id="about-quello-center">
+    <div id="about-quello-center" class="about">
+      <details>
+        <summary>About the Quello Center at Michigan State University</summary>
+
+        <p>
+          The Quello Center is a multi-disciplinary research center affiliated
+          with the Department of Media and Information at Michigan State
+          University. The Center seeks to stimulate and inform debate on the
+          economic and social implications of media, communication, and
+          information innovations in the digital age.
+        </p>
+      </details>
     </div>
 
-    <div id="about-mlab">
+    <div id="about-mlab" class="about">
+      <details>
+        <summary>About Measurement Lab (M-Lab)</summary>
+        <p>
+          The Measurement Lab (M-Lab) platform is run by the scientific
+          community. We make all test results publicly available via the
+          <a href="https://www.measurementlab.net/">MeasurementLab.net</a>
+          website to help promote Internet research. M-Lab's Network Diagnostic
+          Tool collects a number of measures of different facets of your
+          Internet connection. The information published includes each device’s
+          IP address, but does not include personal identifying information
+          about you as an Internet user.
+        </p>
+      </details>
     </div>
 
-    <div id="about-moonshot">
+    <div id="about-moonshot" class="about">
+      <details>
+        <summary>About the Michigan Moonshot</summary>
+        <p>
+          The Michigan Moonshot is a collective call to action which aims to
+          bridge the digital divide in Michigan. Stakeholders include Merit
+          Network, the nation’s longest-running research and education network,
+          the Quello Center at Michigan State University and M-Lab, the largest
+          open internet measurement platform in the world. This call to action
+          is an initiative to expand broadband access to all citizens through
+          policy and funding, data and mapping, education and resources. Learn
+          more about the Michigan Moonshot at
+          <a href="https://www.merit.edu/services/moonshot/">Merit.edu/moonshot</a>.
+        </p>
+      </details>
     </div>
 
-    <div id="faq">
+    <div id="faq" class="about">
       <details>
         <summary>Data Privacy FAQ</summary>
         <h3>How will my data be shared?</h3>
@@ -158,11 +220,10 @@
               performance.</p>
         </ol>
 
-        <!--  TODO: [04/21/2020 schelcj] - remove the reference to data.seatle.gov -->
         <h3>What data does this test collect, and how will it be used?</h3>
         <p>Before you take the test, you will be asked for your location and some basic information about your connection. You can also share what speeds are
-          advertised under your current contract. This data will be stored in a private database, combined with other results, and published to the map and to
-          data.seattle.gov in anonymized form.</p>
+          advertised under your current contract. This data will be stored in a private database, combined with other results, and published to the map.</p>
+
         <p>This test does not collect information about your other Internet traffic, such as your emails, web searches, etc., or any personally identifiable
           information. The data it sends across your network is synthetic - meaning it does not come from your device or other applications you are operating -
           and will be used for measurement only. The speed test data is submitted to M-Lab in aggregated form to assure that the anonymity of users is
@@ -206,6 +267,7 @@
             {% endfor -%}
             {% endfor -%}
           </div>
+
           <div class="container" id="consent-text">
             <label>
               <span class="required">*</span> <input type="checkbox" name="data_acknowledgement" id="data_acknowledgement" value="yes" />
@@ -217,6 +279,7 @@
               <li class="text-muted">By providing your email address, you may be contacted later regarding future optional studies.</li>
             </ul>
           </div>
+
           <input name="latitude" id="latitude" type="hidden" />
           <input name="longitude" id="longitude" type="hidden" />
           <input name="actual_download" id="actual_download" type="hidden" />
@@ -238,19 +301,23 @@
               <div id="approx-loc">
                 <div>
                   <h3 class="league-gothic">{{ run_test_heading }}</h3>
-                  <p>Hit the "play" button to begin the speed test.</p>
+                  <h4>Hit the "play" button to begin the speed test.</h4>
                 </div>
+
                 <div class="well">
                   <p>
-                    Many factors may impact upload/download speed tests, at
-                    any given test period. This speed test measures how well your current
-                    connection works between your computer/device and the testing server
-                    itself – providing a general measure of how fast (or slow) your
-                    internet connection is. This test doesn't necessarily mean that this
-                    is the bandwidth you should always expect between you and anywhere
-                    else. Two things to ensure the most accurate test results:
+                    Internet infrastructure and citizens’ use of it is
+                    ever-evolving. A test conducted today may show different
+                    results than a test conducted last week. This can be caused
+                    by changes in equipment, the number of people using the
+                    network simultaneously and the services people use on the
+                    Internet. We encourage participants to take the speed test
+                    portion of this survey multiple times and on a periodic
+                    basis to help us gauge the range and averages of performance
+                    over time.
                   </p>
 
+                  <p>Two things to ensure the most accurate test results:</p>
                   <ol>
                     <li>Minimizing the "noise" during an internet speed test, which is what the several tips above help you do, certainly contributes to a more
                       accurate speed test result.</li>
@@ -286,50 +353,78 @@
             <div class="col-md-8 col-md-offset-2">
               <div id="ndt-results" class="ndt-related">
                 <div class="container">
-                  <div id="your-results">
-                    <h3 class="league-gothic">{{ test_result_heading }}</h3>
-                    <p>{{ download_result_label }} <span id="s2cRate"></span> {{ download_result_unit }}</p>
-                    <p>{{ upload_result_label }} <span id="c2sRate"></span> {{ upload_result_unit }}</p>
-                    <p>{{ rtt_result_label }} <span id="MinRTT"></span> {{ rtt_result_unit }}</p>
-                  </div>
-                  <div id="thankyou">
-                    <h3 class="league-gothic">{{ thank_you_heading }}</h3>
-                    <strong>{{ thank_you_message }}</strong><br /><br />
-                    <strong>{{ next_action_message }}</strong>
-                    <div id="socialshare">
-                      <!-- Social Button HTML -->
-                      {% if social_share_twitter is not none -%}
-                      <!-- Twitter -->
-                      <a href="{{ social_share_twitter }}"" target=" _blank" class="share-btn twitter">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                      {% endif %}
-                      {%- if social_share_facebook is not none -%}
-                      <!-- Facebook -->
-                      <a href="{{ social_share_facebook }}" target="_blank" class="share-btn facebook">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                      {% endif %}
-                      {%- if social_share_reddit is not none -%}
-                      <!-- Reddit (url, title) -->
-                      <a href="{{ social_share_reddit }}" target="_blank" class="share-btn reddit">
-                        <i class="fa fa-reddit"></i>
-                      </a>
-                      {% endif %}
-                      {%- if social_share_linkedin is not none -%}
-                      <!-- LinkedIn -->
-                      <a href="{{ social_share_linkedin }}" target="_blank" class="share-btn linkedin">
-                        <i class="fa fa-linkedin"></i>
-                      </a>
-                      {% endif %}
-                      {%- if social_share_email is not none -%}
-                      <!-- Email -->
-                      <a href="{{ social_share_email }}" target="_blank" class="share-btn email">
-                        <i class="fa fa-envelope"></i>
-                      </a>
-                      {% endif -%}
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div id="your-results">
+                        <h3 class="league-gothic">{{ test_result_heading }}</h3>
+                        <dl>
+                          <dt>{{ download_result_label }}</dt>
+                          <dd><span id="s2cRate"></span> {{ download_result_unit }}</dd>
+
+                          <dt>{{ upload_result_label }}</dt>
+                          <dd><span id="c2sRate"></span> {{ upload_result_unit }}</dd>
+
+                          <dt>{{ rtt_result_label }}</dt>
+                          <dd><span id="MinRTT"></span> {{ rtt_result_unit }}</dd>
+                        </dl>
+                      </div>
                     </div>
-                  </div> <!-- thankyou div -->
+
+                    <div class="col-md-9">
+                      <div id="thankyou">
+                        <h3 class="league-gothic">{{ thank_you_heading }}</h3>
+
+                        <h4>{{ thank_you_message }}</h4>
+
+                        <p>
+                          Internet infrastructure and citizens’ use of it is
+                          ever-evolving. A test conducted today may show different
+                          results than a test conducted last week. This can be caused
+                          by changes in equipment, the number of people using the
+                          network simultaneously and the services people use on the
+                          Internet. We encourage participants to take the speed test
+                          portion of this survey multiple times and on a periodic
+                          basis to help us gauge the range and averages of performance
+                          over time.
+                        </p>
+
+                        <h4>{{ next_action_message }}</h4>
+                        <div id="socialshare">
+                          <!-- Social Button HTML -->
+                          {% if social_share_twitter is not none -%}
+                          <!-- Twitter -->
+                          <a href="{{ social_share_twitter }}"" target=" _blank" class="share-btn twitter">
+                            <i class="fa fa-twitter"></i>
+                          </a>
+                          {% endif %}
+                          {%- if social_share_facebook is not none -%}
+                          <!-- Facebook -->
+                          <a href="{{ social_share_facebook }}" target="_blank" class="share-btn facebook">
+                            <i class="fa fa-facebook"></i>
+                          </a>
+                          {% endif %}
+                          {%- if social_share_reddit is not none -%}
+                          <!-- Reddit (url, title) -->
+                          <a href="{{ social_share_reddit }}" target="_blank" class="share-btn reddit">
+                            <i class="fa fa-reddit"></i>
+                          </a>
+                          {% endif %}
+                          {%- if social_share_linkedin is not none -%}
+                          <!-- LinkedIn -->
+                          <a href="{{ social_share_linkedin }}" target="_blank" class="share-btn linkedin">
+                            <i class="fa fa-linkedin"></i>
+                          </a>
+                          {% endif %}
+                          {%- if social_share_email is not none -%}
+                          <!-- Email -->
+                          <a href="{{ social_share_email }}" target="_blank" class="share-btn email">
+                            <i class="fa fa-envelope"></i>
+                          </a>
+                          {% endif -%}
+                        </div>
+                      </div> <!-- thankyou div -->
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -339,9 +434,6 @@
       <div id="icons">
         <div id="take-test" onclick="runTest()">
           <span class="button-label">{{ icon_test_label }}</span>
-        </div>
-        <div id="learn-more">
-          <a href="{{ icon_learn_link }}" target="_parent"><span class="button-label">{{ icon_learn_label }}</span></a>
         </div>
       </div>
     </div>
