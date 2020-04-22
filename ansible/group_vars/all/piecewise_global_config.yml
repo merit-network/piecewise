@@ -63,7 +63,7 @@ database_user_group: postgres
 #       the database user. These can be safely left as the default, unless you desire to
 #       change them.
 
-site_fqdn: merit-piecewise-test04.merit.edu # TODO: [04/21/2020 schelcj] - need real url
+site_fqdn: survey.michiganmoonshot.org
 # !REQUIRED!
 #
 # site_fqdn
@@ -393,7 +393,7 @@ form_fields:
   1:
     survey_participant_id:
       field_type: text
-      db_type: Integer
+      db_type: String
       name: survey_participant_id
       id: survey_participant_id
       class: ""
@@ -618,13 +618,8 @@ site_name: "Michigan Moonshot"
 # Defines the HTML page title element
 
 intro_text: >
-  The Michigan Moonshot is a statewide broadband initiative run by Merit Network, a non-profit research and education network, in partnership with the Quello Center at Michigan State University. The goal of this survey is to identify areas of Michigan that do not have, or have poor broadband Internet service. Merit  not a direct residential broadband provider, information gathered from this survey will help us propel partnerships and collaborations within Michigan Moonshot  to  move community broadband connectivity forward, together. 
 
-  <strong>Your response is critical to these efforts and completing this survey should take five minutes, or less.</strong> Any information submitted will not be sold, but may be used in planning to expand access opportunities with government and local partners. We understand that you may not have all the necessary information to answer each question on this survey, please answer to the best of your ability.
-
-# TODO: [04/21/2020 schelcj] - what goes here?
 instructions_text: >
-  TODO
 
 # #DEFAULT#
 #
@@ -659,7 +654,7 @@ thank_you_message: >
 next_action_message: "What do you want to do next?"
 # next_action_show_map_text: "View all results to-date on a map of Michigan"
 next_action_learn_about_text: "Learn more about this test and how to improve your speed"
-next_action_learn_about_link: "https://broadbandtest.us/" # TODO: [04/21/2020 schelcj] - do we need this?
+next_action_learn_about_link: "https://broadbandtest.us/"
 next_action_social_share_text: "Share this test with your friends and neighbors"
 # #DEFAULT#
 #
@@ -687,7 +682,7 @@ icon_test_alt_text: "Take the Speed Test"
 # icon_browse_alt_text: "Browse the Broadband Map"
 icon_learn_label: "Learn More"
 icon_learn_alt_text: "Learn more about this test."
-icon_learn_link: "https://broadbandtest.us/" # TODO: [04/21/2020 schelcj] - do we want this still?
+icon_learn_link: "https://broadbandtest.us/"
 # #DEFAULT#
 #
 
