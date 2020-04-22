@@ -645,7 +645,7 @@ function showTestingPanel() {
 function runTest() {
   $('#ndt-div').removeClass('hidden');
   $('.logos').addClass('hidden');
-  $('#faq').addClass('hidden');
+  $('.about').addClass('hidden');
   $('#ndt-div').addClass('visible');
   $('#extra-data').removeClass('visible');
   $('#extra-data').addClass('hidden');
