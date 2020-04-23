@@ -399,7 +399,6 @@ form_fields:
       class: ""
       text: "If you’ve been provided a survey ID by your local government, school district, etc. , please enter it below. If you did not receive an ID, please move onto question 2."
       title: "If you’ve been provided a survey ID by your local government, school district, etc. , please enter it below. If you did not receive an ID, please move onto question 2."
-      required: yes 
   2:
     survey_property_type:
       field_type: select_list
@@ -423,7 +422,6 @@ form_fields:
       class: "survey-address-field"
       text: "Please only include street name. (e.g.  Main NOT Main St.)"
       title: "Please only include street name. (e.g.  Main NOT Main St.)"
-      required: yes
   4:
     survey_street_number:
       field_type: text
@@ -433,7 +431,6 @@ form_fields:
       class: "survey-address-field"
       text: "Please include the street number"
       title: "Please include the street number"
-      required: yes
   5:
     survey_street_direction:
       field_type: select_list
@@ -443,7 +440,6 @@ form_fields:
       class: "survey-address-field"
       text: "Please include the street direction"
       title: "Please include the street direction"
-      required: yes
       options:
         a_default: "------"
         b_none: "None"
@@ -464,7 +460,6 @@ form_fields:
       class: "survey-address-field"
       text: "City, Village, or Township"
       title: "City, Village, or Township"
-      required: yes
   7:
     survey_zipcode:
       field_type: text
@@ -474,7 +469,6 @@ form_fields:
       class: "survey-address-field"
       text: "Zipcode"
       title: "Zipcode"
-      required: yes
   8:
     survey_no_residents:
       field_type: select_list
@@ -589,6 +583,7 @@ form_fields:
       class: ""
       text: "Are you completing this survey over a wifi connection?"
       title: "Are you completing this survey over a wifi connection?"
+      required: yes
       options:
         a_default: "------"
         b_yes: "Yes"
