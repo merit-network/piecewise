@@ -415,15 +415,67 @@ form_fields:
         b_business: "Business"  
         c_residential: "Residential"
   3:
-    survey_address:
+    survey_street_name:
       field_type: text
       db_type: String
-      name: survey_address
-      id: survey_address
-      class: ""
-      text: "Please enter the postal address of your location. If this is a business, please proceed to question #9 after providing address information below"
-      title: "Please enter the postal address of your location. If this is a business, please proceed to question #9 after providing address information below"
+      name: survey_street_name
+      id: survey_street_name
+      class: "survey-address-field"
+      text: "Please only include street name. (e.g.  Main NOT Main St.)"
+      title: "Please only include street name. (e.g.  Main NOT Main St.)"
+      required: yes
   4:
+    survey_street_number:
+      field_type: text
+      db_type: String
+      name: survey_street_number
+      id: survey_street_number
+      class: "survey-address-field"
+      text: "Please include the street number"
+      title: "Please include the street number"
+      required: yes
+  5:
+    survey_street_direction:
+      field_type: select_list
+      db_type: String
+      name: survey_street_direction
+      id: survey_street_direction
+      class: "survey-address-field"
+      text: "Please include the street direction"
+      title: "Please include the street direction"
+      required: yes
+      options:
+        a_default: "------"
+        b_none: "None"
+        c_north: "North"
+        d_south: "South"
+        e_east: "East"
+        f_west: "West"
+        g_north_west: "Northwest"
+        h_north_east: "Northeast"
+        i_south_west: "Southwest"
+        j_south_east: "Southeast"
+  6:
+    survey_township:
+      field_type: text
+      db_type: String
+      name: survey_township
+      id: survey_township
+      class: "survey-address-field"
+      text: "City, Village, or Township"
+      title: "City, Village, or Township"
+      required: yes
+  7:
+    survey_zipcode:
+      field_type: text
+      db_type: String
+      name: survey_zipcode
+      id: survey_zipcode
+      class: "survey-address-field"
+      text: "Zipcode"
+      title: "Zipcode"
+      required: yes
+  8:
     survey_no_residents:
       field_type: select_list
       db_type: String
@@ -444,7 +496,7 @@ form_fields:
         b_7: "7"
         b_8: "8"
         b_9: "9+"
-  5:
+  9:
     survey_no_minors:
       field_type: select_list
       db_type: String
@@ -465,7 +517,7 @@ form_fields:
         b_7: "7"
         b_8: "8"
         b_9: "9+"
-  6:
+  10:
     survey_no_post_secondary:
       field_type: select_list
       db_type: String
@@ -486,7 +538,7 @@ form_fields:
         b_7: "7"
         b_8: "8"
         b_9: "9+"
-  7:
+  11:
     survey_no_devices:
       field_type: select_list
       db_type: String
@@ -507,7 +559,7 @@ form_fields:
         b_7: "7"
         b_8: "8"
         b_9: "9+"
-  8:
+  12:
     survey_no_tablets:
       field_type: select_list
       db_type: String
@@ -528,7 +580,7 @@ form_fields:
         b_7: "7"
         b_8: "8"
         b_9: "9+"
-  9:
+  13:
     survey_wifi:
       field_type: select_list
       db_type: String
@@ -542,7 +594,7 @@ form_fields:
         b_yes: "Yes"
         c_no: "No"
         d_dont_know: "I don't know"
-  10:
+  14:
     survey_connection_type:
       field_type: select_list
       db_type: String
@@ -562,7 +614,7 @@ form_fields:
         g_fixed: "Fixed wireless"
         h_other: "Other"
         i_dont_know: "I don't know"
-  11:
+  15:
     survey_speed:
       field_type: select_list
       db_type: String
@@ -579,7 +631,7 @@ form_fields:
         d_ge_100_le_1000: "Greater than 100Mbps and less than 1Gbps"
         e_ge_1000: "Greater than 1Gbps"
         f_dont_know: "I don't know"
-  12:
+  16:
     survey_satisfaction:
       field_type: select_list
       db_type: String
@@ -596,7 +648,7 @@ form_fields:
         d_neutral: "Neutral"
         e_dis: "Dissatisfied"
         f_very_dis: "Very dissatisfied"
-  13:
+  17:
     survey_email:
       field_type: text
       db_type: String
