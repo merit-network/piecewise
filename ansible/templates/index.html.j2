@@ -361,6 +361,7 @@
               <div id="ndt-div">
                 <div id="ndt-svg"></div>
               </div>
+              <div id="ndt-status"></div>
             </div>
           </div>
 
@@ -412,7 +413,6 @@
                     If possible, connect to the Internet directly via a cable, DSL, or fiber modem
                   </p>
                 </div>
-                <div id="ndt-status"></div>
               </div>
             </div>
           </div>
@@ -471,24 +471,12 @@
                             <i class="fa fa-facebook"></i>
                           </a>
                           {% endif %}
-                          {%- if social_share_reddit is not none -%}
-                          <!-- Reddit (url, title) -->
-                          <a href="{{ social_share_reddit }}" target="_blank" class="share-btn reddit">
-                            <i class="fa fa-reddit"></i>
-                          </a>
-                          {% endif %}
                           {%- if social_share_linkedin is not none -%}
                           <!-- LinkedIn -->
                           <a href="{{ social_share_linkedin }}" target="_blank" class="share-btn linkedin">
                             <i class="fa fa-linkedin"></i>
                           </a>
                           {% endif %}
-                          {%- if social_share_email is not none -%}
-                          <!-- Email -->
-                          <a href="{{ social_share_email }}" target="_blank" class="share-btn email">
-                            <i class="fa fa-envelope"></i>
-                          </a>
-                          {% endif -%}
                         </div>
                       </div> <!-- thankyou div -->
                     </div>

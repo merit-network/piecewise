@@ -1360,3 +1360,7 @@ a.leaflet-popup-close-button {
   margin: 0 auto 2rem;
   padding: 1rem;
 }
+
+#ndt-status {
+  padding-left: 91px;
+}

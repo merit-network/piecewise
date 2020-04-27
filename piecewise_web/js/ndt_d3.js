@@ -31,7 +31,7 @@ function NDTmeter(body_element) {
     'preparing_meta': 'Preparing metadata',
     'running_meta': 'Sending metadata',
     'finished_meta': 'Finished metadata',
-    'finished_all': 'Test complete'
+    'finished_all': ''
   };
 
   this.create();
