@@ -77,6 +77,12 @@ site_fqdn: survey.michiganmoonshot.org
 #
 #       Once you have the server's domain name in DNS working, you can use it instead of the IP address.
 
+google_api_key: 12345
+# 
+# google_places_api_key
+#   API key for address lookups with the Places API
+#   Will be prompted at runtime.
+
 #-------------------------------------------->>
 
 ########################

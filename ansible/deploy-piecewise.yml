@@ -1,5 +1,8 @@
 ---
 - hosts: all
+  vars_prompt:
+    - name: google_api_key
+      prompt: "Google API KEY for maps/places address lookups"
   tasks:
     - include_tasks: playbooks/debian_hosts_tasks.yml
       become: true
