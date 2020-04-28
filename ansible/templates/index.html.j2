@@ -22,6 +22,7 @@
   <link href='/css/jquery-ui.min.css' rel='stylesheet' />
   <link href='/css/mlab.css' rel='stylesheet' />
   <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="/js/google-places.js"></script>
   <script src='/js/mlab.js'></script>
   <script src='/js/ndt.js'></script>
   <script src='/js/ndt_d3.js'></script>
@@ -147,6 +148,67 @@
     <div id="faq" class="about">
       <details>
         <summary>Data Privacy FAQ</summary>
+        <h3>Who Is Involved</h3>
+        <p>
+          There are several groups of individuals who are involved with this initiative: Merit Network, Inc. is a non-profit organization performing data
+          collection and analysis around broadband data speeds, availability, and impact on our communities.
+          The sponsor is the group or organization which has contracted with Merit to perform this work, and will receive the aggregate reports and output from
+          the analysis once completed. Sponsors can be municipal or other civic organizations which want to understand how broadband data exists and impacts the
+          communities they serve. Participants are residents of these communities, and provide the data which is used for analysis.
+        </p>
+
+        <h3>Data We Collect</h3>
+        <p>
+          We collect data from several public and non-public sources in order to perform this service. Data that is not considered public data comes directly
+          from participants, and includes both individualized survey responses and an associated broadband speed measurement test. Survey responses can include
+          local addresses and property parcel IDs along with participant-generated responses to how a household manages and uses any Internet service. Data is
+          not specifically tied to an individual, but to a home, property, or residence within a geographical area.
+        </p>
+
+        <h3>What We Do With Data</h3>
+        <p>
+          Public and participant-provided data is aggregated and analyzed to report on broadband availability within census block units of a geographic area.
+          Graphs, maps, and tabular reports are generated to display census-level blocks corresponding with adoption of Internet Service Providers (ISPs),
+          average broadband usage, and other aggregated data resulting from participant-driven surveys.
+        </p>
+
+        <p>
+          Broadband speed testing data is gathered via the Measurement Lab (M-Lab) platform, and is run by the scientific community. All test results are
+          publicly available via the MeasurementLab.net website to help promote Internet research, as M-Lab's Network Diagnostic Tool collects a number of
+          measures of different facets of Internet connections. The information published includes each device’s IP address, but does not include personal
+          identifying information about specific Internet users.
+        </p>
+
+        <h3>What Others Can Do With Data</h3>
+        <p>
+          Only certain data provided by Merit to sponsors may be shared with any other parties. Summary reports, broadband speedtest data, and associated
+          geographic maps may be used in reports, presentations, and other forms of communication to showcase the current state of broadband access in a
+          sponsor's community. In all other cases, data may not be sold, transferred, or shared with any other third parties without the express written consent
+          of Merit Network, Inc. Data may not be used by non-public Internet Service Providers (ISPs) to segregate areas of investment or divestment within
+          communities. Sponsors must treat any data with the same level of care as their own internal, confidential data.
+        </p>
+
+        <h3>Data Storage</h3>
+
+        <p>
+          Collected data is stored in a third-party platform (Google BigQuery) for research and analysis, with aggregate reporting data compiled and stored on
+          secured systems at Merit Network. Data is kept encrypted at rest and in transit where technically possible and kept within the United States.
+        </p>
+        <p>
+          Aggregate and report data is provided to the sponsor as a deliverable of this service. Data may be retained indefinitely by Merit Network in order to
+          assist with longitudinal studies with the express purpose of assisting municipalities, governments, and other organizations with increasing broadband
+          deployment and usage within the United States.
+        </p>
+
+        <h3>Data Confidentiality</h3>
+
+        <p>
+          All data collected and created is treated with the same level of data classification as Merit's own internal data, and subsequently with the same
+          level of protections and security controls as well. Data may only be viewed by individuals performing work on the data, and access is restricted to
+          the minimum amount of access necessary to perform work. Oversight of privacy and security controls surrounding this data is performed by the Chief
+          Information Security Officer (CISO) at Merit Network.
+        </p>
+
         <h3>How will my data be shared?</h3>
 
         <p>
@@ -572,6 +634,8 @@
       };
     };
   </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuj6WD2gbyGXIE0wmKDuykhh4I2AhKkwA&libraries=places&callback=initAutocomplete" async defer></script>
 </body>
 
 </html>

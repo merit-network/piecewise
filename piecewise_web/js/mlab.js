@@ -824,4 +824,6 @@ $( document ).ready(function() {
     window.location.reload();
     evt.preventDefault();
   });
+
+  $('#autocomplete').on('focus', geolocate());
 });

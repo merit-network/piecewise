@@ -414,62 +414,60 @@ form_fields:
         b_business: "Business"  
         c_residential: "Residential"
   3:
-    survey_street_name:
+    survey_autocomplete:
       field_type: text
       db_type: String
-      name: survey_street_name
-      id: survey_street_name
-      class: "survey-address-field"
-      text: "Please only include street name. (e.g.  Main NOT Main St.)"
-      title: "Please only include street name. (e.g.  Main NOT Main St.)"
-  4:
+      name: survey_autocomplete
+      id: autocomplete
+      class: ""
+      text: "Lookup your address"
+      title: "Lookup your address"
+  4: 
     survey_street_number:
       field_type: text
       db_type: String
       name: survey_street_number
-      id: survey_street_number
-      class: "survey-address-field"
-      text: "Please include the street number"
-      title: "Please include the street number"
+      id: street_number
+      class: ""
+      text: "Street Number"
+      title: "Street Number"
   5:
-    survey_street_direction:
-      field_type: select_list
+    survey_route:
+      field_type: text
       db_type: String
-      name: survey_street_direction
-      id: survey_street_direction
-      class: "survey-address-field"
-      text: "Please include the street direction"
-      title: "Please include the street direction"
-      options:
-        a_default: "------"
-        b_none: "None"
-        c_north: "North"
-        d_south: "South"
-        e_east: "East"
-        f_west: "West"
-        g_north_west: "Northwest"
-        h_north_east: "Northeast"
-        i_south_west: "Southwest"
-        j_south_east: "Southeast"
+      name: survey_route
+      id: route
+      class: ""
+      text: "Street Name"
+      title: "Street Name"
   6:
-    survey_township:
+    survey_locality:
       field_type: text
       db_type: String
-      name: survey_township
-      id: survey_township
-      class: "survey-address-field"
-      text: "City, Village, or Township"
-      title: "City, Village, or Township"
+      name: survey_locality
+      id: locality
+      class: ""
+      text: "City"
+      title: "City"
   7:
-    survey_zipcode:
+    survey_state:
       field_type: text
       db_type: String
-      name: survey_zipcode
-      id: survey_zipcode
-      class: "survey-address-field"
-      text: "Zipcode"
-      title: "Zipcode"
+      name: survey_state
+      id: administrative_area_level_1
+      class: ""
+      text: "State"
+      title: "State"
   8:
+    survey_postal_code:
+      field_type: text
+      db_type: String
+      name: survey_postal_code
+      id: postal_code
+      class: ""
+      text: "Zipcode"
+      title: "zipcode"
+  9:
     survey_no_residents:
       field_type: select_list
       db_type: String
@@ -490,7 +488,7 @@ form_fields:
         b_7: "7"
         b_8: "8"
         b_9: "9+"
-  9:
+  10:
     survey_no_minors:
       field_type: select_list
       db_type: String
@@ -511,7 +509,7 @@ form_fields:
         b_7: "7"
         b_8: "8"
         b_9: "9+"
-  10:
+  11:
     survey_no_post_secondary:
       field_type: select_list
       db_type: String
@@ -532,7 +530,7 @@ form_fields:
         b_7: "7"
         b_8: "8"
         b_9: "9+"
-  11:
+  12:
     survey_no_devices:
       field_type: select_list
       db_type: String
@@ -553,7 +551,7 @@ form_fields:
         b_7: "7"
         b_8: "8"
         b_9: "9+"
-  12:
+  13:
     survey_no_tablets:
       field_type: select_list
       db_type: String
@@ -574,7 +572,7 @@ form_fields:
         b_7: "7"
         b_8: "8"
         b_9: "9+"
-  13:
+  14:
     survey_wifi:
       field_type: select_list
       db_type: String
@@ -589,7 +587,7 @@ form_fields:
         b_yes: "Yes"
         c_no: "No"
         d_dont_know: "I don't know"
-  14:
+  15:
     survey_connection_type:
       field_type: select_list
       db_type: String
@@ -609,7 +607,7 @@ form_fields:
         g_fixed: "Fixed wireless"
         h_other: "Other"
         i_dont_know: "I don't know"
-  15:
+  16:
     survey_speed:
       field_type: select_list
       db_type: String
@@ -626,7 +624,7 @@ form_fields:
         d_ge_100_le_1000: "Greater than 100Mbps and less than 1Gbps"
         e_ge_1000: "Greater than 1Gbps"
         f_dont_know: "I don't know"
-  16:
+  17:
     survey_satisfaction:
       field_type: select_list
       db_type: String
@@ -643,7 +641,7 @@ form_fields:
         d_neutral: "Neutral"
         e_dis: "Dissatisfied"
         f_very_dis: "Very dissatisfied"
-  17:
+  18:
     survey_email:
       field_type: text
       db_type: String
