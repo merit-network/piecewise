@@ -715,11 +715,11 @@ next_action_social_share_text: "Share this test with your friends and neighbors"
 # If you set any of these to 'none', they will be excluded from the website.
 # If you don't want any social share options, set all of the items below to 'none'
 # and also set 'next_action_social_share_text' to 'none' (without quotes) above.
-social_share_twitter: "https://twitter.com/intent/tweet?text=I%20just%20completed%20the%20Michigan%20Moonshot%20Broadband%20Connectivity%20Survey!%20If%20you%20live%20in%20Michigan,%20you%20can%20take%20this%20survey%20to%20help%20identify%20who%20does%20or%20does%20not%20have%20Internet%20access.%20This%20data%20will%20be%20leveraged%20to%20expand%20broadband%20connectivity%20in%20our%20state.%20Click%20here%20to%20participate!&url=http://michiganmoonshot.org/"
-social_share_facebook: "https://www.facebook.com/sharer/sharer.php?u=https%3A//michiganmoonshot.org/"
+social_share_twitter: "https://twitter.com/intent/tweet?text=I%20just%20completed%20the%20Michigan%20Moonshot%20Broadband%20Connectivity%20Survey!%20If%20you%20live%20in%20Michigan,%20you%20can%20take%20this%20survey%20to%20help%20identify%20who%20does%20or%20does%20not%20have%20Internet%20access.%20This%20data%20will%20be%20leveraged%20to%20expand%20broadband%20connectivity%20in%20our%20state.%20Click%20here%20to%20participate!&url=http://survey.michiganmoonshot.org/"
+social_share_facebook: "https://www.facebook.com/sharer/sharer.php?u=https%3A//survey.michiganmoonshot.org/"
 social_share_stumbleupon: none
 social_share_reddit: none
-social_share_linkedin: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A//michiganmoonshot.org/&title=Michigan%20Moonshot&summary=I%20just%20completed%20the%20Michigan%20Moonshot%20Broadband%20Connectivity%20Survey!%20If%20you%20live%20in%20Michigan,%20you%20can%20take%20this%20survey%20to%20help%20identify%20who%20does%20or%20does%20not%20have%20Internet%20access.%20This%20data%20will%20be%20leveraged%20to%20expand%20broadband%20connectivity%20in%20our%20state.%20Click%20here%20to%20participate&source=Merit%20Network,%20inc."
+social_share_linkedin: "https://www.linkedin.com/shareArticle?mini=true&url=https%3A//survey.michiganmoonshot.org&title=Michigan%20Moonshot&summary=I%20just%20completed%20the%20Michigan%20Moonshot%20Broadband%20Connectivity%20Survey!%20If%20you%20live%20in%20Michigan,%20you%20can%20take%20this%20survey%20to%20help%20identify%20who%20does%20or%20does%20not%20have%20Internet%20access.%20This%20data%20will%20be%20leveraged%20to%20expand%20broadband%20connectivity%20in%20our%20state.%20Click%20here%20to%20participate&source=Merit%20Network,%20inc."
 social_share_email: none
 # #DEFAULT#
 #
