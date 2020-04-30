@@ -1364,3 +1364,8 @@ a.leaflet-popup-close-button {
 #ndt-status {
   padding-left: 91px;
 }
+
+#retake-speed-test {
+  margin-top: -25px;
+  padding: 7px 12px;
+}
