@@ -22,7 +22,6 @@
   <link href='/css/jquery-ui.min.css' rel='stylesheet' />
   <link href='/css/mlab.css' rel='stylesheet' />
   <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src="/js/google-places.js"></script>
   <script src='/js/mlab.js'></script>
   <script src='/js/ndt.js'></script>
   <script src='/js/ndt_d3.js'></script>
@@ -589,6 +588,17 @@
       navigator.geolocation.getCurrentPosition(success, error);
     }
 
+    $(document).ready(function(e) {
+      $('#retake-speed-test').on('click', function(e) {
+        let test_container_offset = $('#test-container').offset();
+        window.scrollTo(test_container_offset.left, test_container_offset.top);
+
+        $('#ndt-div').show();
+        NDT_member.reset_meter();
+        NDT_client.startTest();
+      });
+    });
+
     function success(position) {
 
       document.getElementById('latitude').value = position.coords.latitude;
@@ -643,6 +653,7 @@
   </script>
 
   <script src="https://maps.googleapis.com/maps/api/js?key={{ google_api_key }}&libraries=places&callback=initAutocomplete" async defer></script>
+  <script src="/js/google-places.js"></script>
 </body>
 
 </html>

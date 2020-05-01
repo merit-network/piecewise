@@ -826,8 +826,4 @@ $( document ).ready(function() {
   });
 
   $('#autocomplete').on('focus', geolocate());
-
-  $('#retake-speed-test').on('click', function(e) {
-    e.preventDefault();
-  });
 });
