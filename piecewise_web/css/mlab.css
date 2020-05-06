@@ -57,8 +57,8 @@ html, body {
 #ndt-div {
 	height: auto;
 	width: 30%;
-	margin: 5%;
-	float: left;
+	margin: 1em auto 0;
+	float: none;
   max-width: 175px;
 }
 
@@ -66,6 +66,8 @@ html, body {
 	font-size: 2em;
   margin: 0.5em;
   font-weight: bold;
+  padding-left: 0;
+  text-align: center;
 }
 
 #ndt-results {
@@ -321,18 +323,14 @@ span.ui-slider-handle.ui-state-default.ui-corner-all:focus {
   margin-top:15px;
 }
 
-#approx-loc {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  text-align: left;
-  width:auto;
-  float:right;
-  display:inline-block;
-}
 
 #approx-loc p:first-child {
   font-weight: bold;
+  margin: 0 0 3rem;
+}
+
+#approx-loc div:first-child {
+  text-align: center;
 }
 
 #ndt {
@@ -425,7 +423,7 @@ span.ui-slider-handle.ui-state-default.ui-corner-all:focus {
 
 .metric-value {
   font-weight: bold;
-  color:inherit;
+  font-size: large;
 }
 
 #progress-meter text.information {
@@ -474,10 +472,11 @@ span.ui-slider-handle.ui-state-default.ui-corner-all:focus {
 #header button {
   margin:20px;
 }
+
 #approx-loc {
-  width:40%;
-  margin-top:10px;
-  padding-right:10px;
+  display: block;
+  float: none;
+  margin: 5px auto 0;
 }
 
 #icon-container, .leaflet-bottom.leaflet-left, #approx-loc, .leaflet-top.leaflet-right {
@@ -677,6 +676,7 @@ a.leaflet-popup-close-button {
   }
   #approx-loc {
     /*display:none !important; */
+    width: 100%;
   }
 
   #mobile-container {
@@ -865,7 +865,7 @@ a.leaflet-popup-close-button {
   .sliderElements {
     width:70%;
   }
-  #ndt h4, #ndt > p, #approx-loc {
+  #ndt h4, #ndt > p {
   /*#ndt h4, #ndt p, #about-ndt p {
     font-size: 0.8em;*/
     width:65%;
@@ -1160,8 +1160,6 @@ a.leaflet-popup-close-button {
     font-size: 2em;
   }
   #approx-loc {
-    width:60%;
-    margin:0;
     padding:0;
   }
   #ndt-results p {
@@ -1359,14 +1357,25 @@ a.leaflet-popup-close-button {
 .about {
   width: 80%;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0.25rem 1rem;
 }
 
-#ndt-status {
-  padding-left: 91px;
+details > :not(summary) {
+  margin-left: 4.125rem;
 }
 
-#retake-speed-test {
-  margin-top: -25px;
-  padding: 7px 12px;
+details h3 {
+  font-size: 15px !important;
+}
+
+summary {
+  font-size: 15px; padding: 8px;
+}
+
+summary::before {
+  line-height: 1;
+}
+
+#collector {
+  margin-top: 3em;
 }

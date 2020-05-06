@@ -54,7 +54,7 @@
           Network, a non-profit research and education network, in partnership
           with the Quello Center at Michigan State University. The goal of this
           survey is to identify areas of Michigan that do not have broadband
-          Internet, or have poor broadband Internet service. Merit not a direct
+          Internet, or have poor broadband Internet service. Merit is not a direct
           residential broadband provider, information gathered from this survey
           will help us propel partnerships and collaborations within Michigan
           Moonshot to move community broadband connectivity forward, together.
@@ -136,11 +136,10 @@
           bridge the digital divide in Michigan. Stakeholders include Merit
           Network, the nation’s longest-running research and education network,
           the Quello Center at Michigan State University and M-Lab, the largest
-          open internet measurement platform in the world. This call to action
-          is an initiative to expand broadband access to all citizens through
-          policy and funding, data and mapping, education and resources. Learn
-          more about the Michigan Moonshot at
-          <a href="https://www.merit.edu/services/moonshot/">Merit.edu/moonshot</a>.
+          open Internet measurement platform in the world. This initiative aims
+          to expand broadband access to all citizens through policy and funding,
+          data and mapping, education and resources. Learn more about the
+          Michigan Moonshot at <a href="https://www.merit.edu/services/moonshot/">Merit.edu/moonshot</a>.
         </p>
       </details>
     </div>
@@ -181,7 +180,7 @@
 
         <h3>What Others Can Do With Data</h3>
         <p>
-          Only certain data provided by Merit to sponsors may be shared with any other parties. Summary reports, broadband speedtest data, and associated
+          Only certain data provided by Merit to sponsors may be shared with any other parties. Summary reports, broadband speed test data, and associated
           geographic maps may be used in reports, presentations, and other forms of communication to showcase the current state of broadband access in a
           sponsor's community. In all other cases, data may not be sold, transferred, or shared with any other third parties without the express written consent
           of Merit Network, Inc. Data may not be used by non-public Internet Service Providers (ISPs) to segregate areas of investment or divestment within
@@ -213,7 +212,8 @@
 
         <p>
           The Measurement Lab (M-Lab) platform is run by the scientific community. M-Lab
-          makes all test results publicly available via the <a href="https://www.measurementlab.net/" target="_blank" rel="noopener noreferrer">MeasurementLab.net</a>
+          makes all test results publicly available via the <a href="https://www.measurementlab.net/" target="_blank"
+            rel="noopener noreferrer">MeasurementLab.net</a>
           website to help promote Internet research. M-Lab's Network Diagnostic Tool collects a number of measures of
           different facets of your Internet connection. The information published includes each device’s IP
           address, but does not include personal identifying information about you as an Internet user.
@@ -256,7 +256,8 @@
         </p>
 
         <p>
-          The <a href="https://www.speedtest.net/" target="_blank" rel="noopener noreferrer">speedtest.net</a> test is an on-net measurement of your connection's performance to the edge of
+          The <a href="https://www.speedtest.net/" target="_blank" rel="noopener noreferrer">speedtest.net</a> test is an on-net measurement of your
+          connection's performance to the edge of
           your ISP's network, and M-Lab's test is an off-net measurement of your connection's
           performance through your ISP's network to one of M-Lab's servers in a Seattle Internet exchangepoint. M-Lab's methodology is based on the rationale
           that consumers request content from the
@@ -372,7 +373,9 @@
             {% for attr, vals in field.items() -%}
             <div class="form-field" id="container-{{ vals['id'] }}">
               <div class="field-container">
+                <label for="{{ vals['name'] }}">
                 {{ vals['text'] }}
+                </label>
               </div>
               <div class="field-container">
                 {% if vals['field_type'] == 'select_list' -%}
@@ -401,7 +404,7 @@
               <span>{{ consent_message }}</span>
             </label>
             <ul>
-              <li class="text-muted">Even with the most accurate location data from our speedtests, providing your exact street address ensures data integrity.
+              <li class="text-muted">Even with the most accurate location data from our speed tests, providing your exact street address ensures data integrity.
               </li>
               <li class="text-muted">By providing your email address, you may be contacted later regarding future optional studies.</li>
             </ul>
@@ -425,7 +428,7 @@
           </div>
 
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-sm-6 col-sm-offset-3">
               <div id="approx-loc">
                 <div>
                   <h3 class="league-gothic">{{ run_test_heading }}</h3>
@@ -482,17 +485,17 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-md-3">
-                      <div id="your-results">
+                      <div id="your-results" class="well">
                         <h3 class="league-gothic">{{ test_result_heading }}</h3>
                         <dl>
                           <dt>{{ download_result_label }}</dt>
-                          <dd><span id="s2cRate"></span> {{ download_result_unit }}</dd>
+                          <dd><span id="s2cRate" class="text-primary"></span> {{ download_result_unit }}</dd>
 
                           <dt>{{ upload_result_label }}</dt>
-                          <dd><span id="c2sRate"></span> {{ upload_result_unit }}</dd>
+                          <dd><span id="c2sRate" class="text-primary"></span> {{ upload_result_unit }}</dd>
 
                           <dt>{{ rtt_result_label }}</dt>
-                          <dd><span id="MinRTT"></span> {{ rtt_result_unit }}</dd>
+                          <dd><span id="MinRTT" class="text-primary"></span> {{ rtt_result_unit }}</dd>
                         </dl>
                       </div>
                     </div>
@@ -524,7 +527,11 @@
                         </div>
 
                         <h4>{{ next_action_message }}</h4>
+
+                        <button type="button" class="btn btn-primary" id="retake-speed-test">Take the Speed Test Again</button>
+
                         <div id="socialshare">
+                          <div><h4>Share On</h4></div>
                           <!-- Social Button HTML -->
                           {% if social_share_twitter is not none -%}
                           <!-- Twitter -->
@@ -544,7 +551,6 @@
                             <i class="fa fa-linkedin"></i>
                           </a>
                           {% endif %}
-                          <button type="button" class="btn btn-primary" id="retake-speed-test">Take the Speed Test Again</button>
                         </div>
                       </div> <!-- thankyou div -->
                     </div>
@@ -588,8 +594,8 @@
       navigator.geolocation.getCurrentPosition(success, error);
     }
 
-    $(document).ready(function(e) {
-      $('#retake-speed-test').on('click', function(e) {
+    $(document).ready(function (e) {
+      $('#retake-speed-test').on('click', function (e) {
         let test_container_offset = $('#test-container').offset();
         window.scrollTo(test_container_offset.left, test_container_offset.top);
 

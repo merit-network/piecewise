@@ -471,8 +471,8 @@ form_fields:
       name: survey_postal_code
       id: postal_code
       class: ""
-      text: "Zipcode"
-      title: "zipcode"
+      text: "Zip Code"
+      title: "zip Code"
   9:
     survey_no_residents:
       field_type: select_list
