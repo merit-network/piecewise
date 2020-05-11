@@ -54,19 +54,21 @@
           Network, a non-profit research and education network, in partnership
           with the Quello Center at Michigan State University. The goal of this
           survey is to identify areas of Michigan that do not have broadband
-          Internet, or have poor broadband Internet service. Merit is not a direct
-          residential broadband provider, information gathered from this survey
-          will help us propel partnerships and collaborations within Michigan
-          Moonshot to move community broadband connectivity forward, together.
+          Internet, or have poor broadband Internet service. While Merit is not
+          a residential broadband service provider, information gathered from
+          this survey will help us foster collaboration within Michigan to
+          improve broadband connectivity for communities.
         </p>
 
         <p>
-          <strong>Your response is critical to these efforts and completing this
-            survey should take five minutes, or less.</strong> Any information
-          submitted will not be sold, but may be used in planning to expand
-          access opportunities with government and local partners. We understand
-          that you may not have all the necessary information to answer each
-          question on this survey, please answer to the best of your ability.
+
+          <strong>Your response is critical to these efforts and completing
+            this survey should take five minutes, or less.</strong> Any information
+            submitted will not be sold, but may be used in planning to expand
+            access opportunities with government and local partners as outlined
+            in the Data Privacy FAQ below. We understand that you may not have
+            all the necessary information to answer each question on this survey,
+            please answer to the best of your ability.
         </p>
 
         <div class="panel panel-default">
@@ -221,11 +223,10 @@
 
         <h3>How will my information be secured?</h3>
         <p>
-          The Quello Center and Merit Network will be responsible for data management related to this
-          project. Data will be maintained and archived in a secure and password-protected repository at
-          servers at Michigan State University. Data and metadata will be provided in accordance with the
-          Data Documentation Initiative (DDI) standard for the social, behavioral, and economic sciences.
-          All data will be made available in a format that protects anonymity and confidentiality.
+          Merit Network will be responsible for data management related to this
+          project. Data will be maintained and archived in a secure and
+          password-protected repository. All data will be made available in a
+          format that protects anonymity and confidentiality.
         </p>
 
         <h3>How does the Broadband Speed Test work?</h3>
@@ -374,7 +375,7 @@
             <div class="form-field" id="container-{{ vals['id'] }}">
               <div class="field-container">
                 <label for="{{ vals['name'] }}">
-                {{ vals['text'] }}
+                  {{ vals['text'] }}
                 </label>
               </div>
               <div class="field-container">
@@ -404,8 +405,7 @@
               <span>{{ consent_message }}</span>
             </label>
             <ul>
-              <li class="text-muted">Even with the most accurate location data from our speed tests, providing your exact street address ensures data integrity.
-              </li>
+              <li class="text-muted">Providing your exact street address will help improve the accuracy of the data. Per our privacy policy, any information will be treated confidentially.</li>
               <li class="text-muted">By providing your email address, you may be contacted later regarding future optional studies.</li>
             </ul>
           </div>
@@ -531,7 +531,9 @@
                         <button type="button" class="btn btn-primary" id="retake-speed-test">Take the Speed Test Again</button>
 
                         <div id="socialshare">
-                          <div><h4>Share On</h4></div>
+                          <div>
+                            <h4>Share On</h4>
+                          </div>
                           <!-- Social Button HTML -->
                           {% if social_share_twitter is not none -%}
                           <!-- Twitter -->

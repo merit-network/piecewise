@@ -8,7 +8,7 @@
 # Required fields are indicated with the text "# !REQUIRED!" just below the variable name.
 # If a field is marked Required, you must enter a value or change the default value.
 
-env: development
+env: production
 # !REQUIRED!
 #
 # env   Instructs Ansible whether this is a server/VM in development or in production.
@@ -403,8 +403,8 @@ form_fields:
       name: survey_participant_id
       id: survey_participant_id
       class: ""
-      text: "1. If you’ve been provided a survey ID by your local government, school district, etc., please enter it below. If you did not receive an ID, please move onto question 2."
-      title: "1. If you’ve been provided a survey ID by your local government, school district, etc., please enter it below. If you did not receive an ID, please move onto question 2."
+      text: "1. If you’ve been provided a survey ID by your local government, school district, etc., please enter it below. If you did not receive an ID, please move on to question 2."
+      title: "1. If you’ve been provided a survey ID by your local government, school district, etc., please enter it below. If you did not receive an ID, please move on to question 2."
   2:
     survey_property_type:
       field_type: select_list
@@ -609,7 +609,7 @@ form_fields:
         c_cable: "Cable"
         d_dsl: "DSL"
         e_sat: "Satellite"
-        f_cell: "Celluar data plan"
+        f_cell: "Cellular/mobile phone data plan"
         g_fixed: "Fixed wireless"
         h_other: "Other"
         i_dont_know: "I don't know"
@@ -620,8 +620,8 @@ form_fields:
       name: survey_speed
       id: survey_speed
       class: ""
-      text: "10. To the best of your knowledge, approximately what speed does your Internet service provide you?"
-      title: "10. To the best of your knowledge, approximately what speed does your Internet service provide you?"
+      text: "10. To the best of your knowledge, approximately what speed does your Internet service provider promise you?"
+      title: "10. To the best of your knowledge, approximately what speed does your Internet service provider promise you?"
       required: yes
       options:
         a_default: "------"
