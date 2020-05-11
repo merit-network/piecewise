@@ -78,7 +78,7 @@ site_fqdn: survey.michiganmoonshot.org
 #       Once you have the server's domain name in DNS working, you can use it instead of the IP address.
 
 google_api_key: 12345
-# 
+#
 # google_places_api_key
 #   API key for address lookups with the Places API
 #   Will be prompted at runtime.
@@ -417,7 +417,7 @@ form_fields:
       required: yes
       options:
         a_default: "------"
-        b_business: "Business"  
+        b_business: "Business"
         c_residential: "Residential"
   3:
     survey_autocomplete:
@@ -428,7 +428,7 @@ form_fields:
       class: ""
       text: "Lookup your address"
       title: "Lookup your address"
-  4: 
+  4:
     survey_street_number:
       field_type: text
       db_type: String
