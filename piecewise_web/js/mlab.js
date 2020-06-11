@@ -826,4 +826,13 @@ $( document ).ready(function() {
   });
 
   $('#autocomplete').on('focus', geolocate());
+
+  let participant_id = window.location.pathname.split('/')[1];
+  if (participant_id !== "") {
+    $('#survey_participant_id').val(participant_id);
+    $('#container-survey_participant_id').hide();
+  }
+
+  $('#container-survey_user_agent').hide();
+  $('#survey_user_agent').val(navigator.userAgent);
 });

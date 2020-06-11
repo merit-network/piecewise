@@ -403,8 +403,8 @@ form_fields:
       name: survey_participant_id
       id: survey_participant_id
       class: ""
-      text: "1. If you’ve been provided a survey ID by your local government, school district, etc., please enter it below. If you did not receive an ID, please move on to question 2."
-      title: "1. If you’ve been provided a survey ID by your local government, school district, etc., please enter it below. If you did not receive an ID, please move on to question 2."
+      text: "If you’ve been provided a survey ID by your local government, school district, etc., please enter it below. If you did not receive an ID, please move on to question 2."
+      title: "If you’ve been provided a survey ID by your local government, school district, etc., please enter it below. If you did not receive an ID, please move on to question 2."
   2:
     survey_property_type:
       field_type: select_list
@@ -412,8 +412,8 @@ form_fields:
       name: survey_property_type
       id: survey_property_type
       class: ""
-      text: "2. Please indicate if this is a business or a residential property."
-      title: "2. Please indicate if this is a business or a residential property."
+      text: "Please indicate if this is a business or a residential property."
+      title: "Please indicate if this is a business or a residential property."
       required: yes
       options:
         a_default: "------"
@@ -480,8 +480,8 @@ form_fields:
       name: survey_no_residents
       id: survey_no_residents
       class: ""
-      text: "3. More people in a home can increase the need for faster Internet. How many people currently live at this address?"
-      title: "3. More people in a home can increase the need for faster Internet. How many people currently live at this address?"
+      text: "More people in a home can increase the need for faster Internet. How many people currently live at this address?"
+      title: "More people in a home can increase the need for faster Internet. How many people currently live at this address?"
       options:
         a_default: "------"
         b_0: "0"
@@ -501,8 +501,8 @@ form_fields:
       name: survey_no_minors
       id: survey_no_minors
       class: ""
-      text: "4. Children who attend school often have an increased need for home Internet access. How many people currently living at this address are under the age of 18?"
-      title: "4. Children who attend school often have an increased need for home Internet access. How many people currently living at this address are under the age of 18?"
+      text: "Children who attend school often have an increased need for home Internet access. How many people currently living at this address are under the age of 18?"
+      title: "Children who attend school often have an increased need for home Internet access. How many people currently living at this address are under the age of 18?"
       options:
         a_default: "------"
         b_0: "0"
@@ -522,8 +522,8 @@ form_fields:
       name: survey_no_post_secondary
       id: survey_no_post_secondary
       class: ""
-      text: "5. How many people living at this address currently take college or university courses (even if those courses are not online)?"
-      title: "5. How many people living at this address currently take college or university courses (even if those courses are not online)?"
+      text: "How many people living at this address currently take college or university courses (even if those courses are not online)?"
+      title: "How many people living at this address currently take college or university courses (even if those courses are not online)?"
       options:
         a_default: "------"
         b_0: "0"
@@ -543,8 +543,8 @@ form_fields:
       name: survey_no_devices
       id: survey_no_devices
       class: ""
-      text: "6. In some situations, having a computer motivates the desire to have Internet access at home. If any, how many working computers/laptops/chromebooks do you have at home?"
-      title: "6. In some situations, having a computer motivates the desire to have Internet access at home. If any, how many working computers/laptops/chromebooks do you have at home?"
+      text: "In some situations, having a computer motivates the desire to have Internet access at home. If any, how many working computers/laptops/chromebooks do you have at home?"
+      title: "In some situations, having a computer motivates the desire to have Internet access at home. If any, how many working computers/laptops/chromebooks do you have at home?"
       options:
         a_default: "------"
         b_0: "0"
@@ -564,8 +564,8 @@ form_fields:
       name: survey_no_tablets
       id: survey_no_tablets
       class: ""
-      text: "7. How many tablets do you have at home? (e.g., iPad, Kindle, Android tablet)"
-      title: "7. How many tablets do you have at home? (e.g., iPad, Kindle, Android tablet)"
+      text: "How many tablets do you have at home? (e.g., iPad, Kindle, Android tablet)"
+      title: "How many tablets do you have at home? (e.g., iPad, Kindle, Android tablet)"
       options:
         a_default: "------"
         b_0: "0"
@@ -585,8 +585,8 @@ form_fields:
       name: survey_wifi
       id: survey_wifi
       class: ""
-      text: "8. Are you completing this survey over a wifi connection?"
-      title: "8. Are you completing this survey over a wifi connection?"
+      text: "Are you completing this survey over a wifi connection?"
+      title: "Are you completing this survey over a wifi connection?"
       required: yes
       options:
         a_default: "------"
@@ -600,8 +600,8 @@ form_fields:
       name: survey_connection_type
       id: survey_wifi
       class: ""
-      text: "9. To the best of your knowledge, how do you currently get Internet access at this property? Choose one."
-      title: "9. To the best of your knowledge, how do you currently get Internet access at this property? Choose one."
+      text: "To the best of your knowledge, how do you currently get Internet access at this property? Choose one."
+      title: "To the best of your knowledge, how do you currently get Internet access at this property? Choose one."
       required: yes
       options:
         a_default: "------"
@@ -620,8 +620,8 @@ form_fields:
       name: survey_speed
       id: survey_speed
       class: ""
-      text: "10. To the best of your knowledge, approximately what speed does your Internet service provider promise you?"
-      title: "10. To the best of your knowledge, approximately what speed does your Internet service provider promise you?"
+      text: "To the best of your knowledge, approximately what speed does your Internet service provider promise you?"
+      title: "To the best of your knowledge, approximately what speed does your Internet service provider promise you?"
       required: yes
       options:
         a_default: "------"
@@ -637,8 +637,8 @@ form_fields:
       name: survey_satisfaction
       id: survey_satisfaction
       class: ""
-      text: "11. Overall – considering performance, cost, and any other factors – how satisfied are you with this Internet service provider? Choose one."
-      title: "11. Overall – considering performance, cost, and any other factors – how satisfied are you with this Internet service provider? Choose one."
+      text: "Overall – considering performance, cost, and any other factors – how satisfied are you with this Internet service provider? Choose one."
+      title: "Overall – considering performance, cost, and any other factors – how satisfied are you with this Internet service provider? Choose one."
       required: yes
       options:
         a_default: "------"
@@ -654,8 +654,17 @@ form_fields:
       name: survey_email
       id: surey_email
       class: ""
-      text: "12. Please provide your email address, so that we may follow up with additional information or questions if needed."
-      title: "12. Please provide your email address, so that we may follow up with additional information or questions if needed."
+      text: "Please provide your email address, so that we may follow up with additional information or questions if needed."
+      title: "Please provide your email address, so that we may follow up with additional information or questions if needed."
+  19:
+    survey_user_agent:
+      field_type: text
+      db_type: String
+      name: survey_user_agent
+      id: survey_user_agent
+      class: "hidden"
+      text: "Browser UserAgent"
+      title: "Browser UserAgent"
 
 ####################
 # 3.3 Website Text #
