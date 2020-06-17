@@ -835,4 +835,11 @@ $( document ).ready(function() {
 
   $('#container-survey_user_agent').hide();
   $('#survey_user_agent').val(navigator.userAgent);
+
+  $('input[name="survey_autocomplete"]').parent().append(
+    $('<span />', {
+      class: 'help-block',
+      text: 'Providing your exact street address will help improve the accuracy of the data. Per our privacy policy, any information will be treated confidentially.'
+    })
+  );
 });
