@@ -8,7 +8,7 @@
 # Required fields are indicated with the text "# !REQUIRED!" just below the variable name.
 # If a field is marked Required, you must enter a value or change the default value.
 
-env: production
+env: "{{ deployment_env }}"
 # !REQUIRED!
 #
 # env   Instructs Ansible whether this is a server/VM in development or in production.
@@ -736,8 +736,8 @@ social_share_email: none
 # 'icon_' and 'mapview_icon_' variables define the text accompanying the icons in the user interface.
 #
 # 'icon_' variables set the text values and '?' link accompanying icons on the initial map display.
-icon_test_label: "Take the Speed Test"
-icon_test_alt_text: "Take the Speed Test"
+icon_test_label: "TAKE THE SPEED TEST and submit the information"
+icon_test_alt_text: "TAKE THE SPEED TEST and submit the information"
 # icon_browse_label: "Browse the Broadband Map"
 # icon_browse_alt_text: "Browse the Broadband Map"
 icon_learn_label: "Learn More"
