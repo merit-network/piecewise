@@ -1,18 +1,41 @@
+/**
+ * Based on Place Autocomplete Address Form:
+ * https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
+ *
+ * Fields (components) information:
+ * https://developers.google.com/maps/documentation/javascript/geocoding#GeocodingAddressTypes
+ */
+
 var placeSearch, autocomplete;
 
-var componentForm = {
-  street_number: 'short_name',
-  route: 'long_name',
-  locality: 'long_name',
-  administrative_area_level_1: 'short_name',
-  postal_code: 'short_name'
+
+// Form field IDs, with components to use/concat.
+var autocompleteFields = {
+  'survey_address_line_1_id': [
+    {'street_number': 'short_name'},
+    ' ',
+    {'route': 'long_name'}
+  ],
+  'survey_address_line_2_id': [],
+  'survey_city_id': [
+    {'locality': 'long_name'}
+  ],
+  'survey_state_id': [
+    {'administrative_area_level_1': 'short_name'}
+  ],
+  'survey_zip_id': [
+    {'postal_code': 'short_name'}
+  ]
 };
+
 
 function initAutocomplete() {
   // Create the autocomplete object, restricting the search predictions to
-  // geographical location types.
+  // geographical location types. Use first form field as anchor.
   autocomplete = new google.maps.places.Autocomplete(
-    document.getElementById('autocomplete'), { types: ['geocode'] });
+    document.getElementById(Object.keys(autocompleteFields)[0]),
+    {types: ['geocode']}
+  );
 
   // Avoid paying for data that you don't need by restricting the set of
   // place fields that are returned to just the address components.
@@ -23,25 +46,49 @@ function initAutocomplete() {
   autocomplete.addListener('place_changed', fillInAddress);
 }
 
+
 function fillInAddress() {
+  var components = {};
+
   // Get the place details from the autocomplete object.
   var place = autocomplete.getPlace();
 
-  for (var component in componentForm) {
-    document.getElementById(component).value = '';
-    document.getElementById(component).disabled = false;
-  }
-
-  // Get each component of the address from the place details,
-  // and then fill-in the corresponding field on the form.
+  // Flip data around for easier use
   for (var i = 0; i < place.address_components.length; i++) {
-    var addressType = place.address_components[i].types[0];
-    if (componentForm[addressType]) {
-      var val = place.address_components[i][componentForm[addressType]];
-      document.getElementById(addressType).value = val;
+    for (var j = 0; j < place.address_components[i].types.length; j++) {
+      components[place.address_components[i].types[j]] = {
+        'long_name': place.address_components[i]['long_name'],
+        'short_name': place.address_components[i]['short_name']
+      };
     }
   }
+
+  for (var field_id in autocompleteFields) {
+    var field = document.getElementById(field_id);
+
+    // Empty/enable fields
+    field.value = '';
+    field.disabled = false;
+
+    // Build value from components (allows empty/none)
+    var field_value = '';
+
+    for (var i = 0; i < autocompleteFields[field_id].length; i++) {
+      var field_component = autocompleteFields[field_id][i];
+
+      if (typeof(field_component) === 'string') {
+        field_value += field_component;
+      } else {
+        var component_key = Object.keys(field_component)[0];
+        var component_type = field_component[component_key];
+        field_value += components[component_key][component_type];
+      }
+    }
+
+    field.value = field_value;
+  }
 }
+
 
 // Bias the autocomplete object to the user's geographical location,
 // as supplied by the browser's 'navigator.geolocation' object.

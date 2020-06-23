@@ -391,12 +391,6 @@ span.ui-slider-handle.ui-state-default.ui-corner-all:focus {
 #icons img.small-icon {
   width:50%;
 }
-.button-label {
-  float: left;
-  margin-top: 2em;
-  font-size: 1.3em;
-  font-weight: bold;
-}
 #mapview-icons {
   width: 110px;
   float: right;
@@ -1117,12 +1111,6 @@ a.leaflet-popup-close-button {
   .container select {
     width:100%;
   }
-  .button-label {
-    margin:0 0 0 10px;
-    font-size: 1em;
-    cursor: pointer;
-    line-height: 50px;
-  }
   #sidebar img {
     max-width: 50px;
   }
@@ -1194,9 +1182,6 @@ a.leaflet-popup-close-button {
   }
   .expected-values {
     float:left;
-  }
-  .button-label {
-    font-size:0.9em;
   }
 }
 
@@ -1378,8 +1363,4 @@ summary::before {
 
 #collector {
   margin-top: 3em;
-}
-
-#take-test .button-label {
-  text-transform: none !important;
 }

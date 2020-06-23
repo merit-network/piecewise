@@ -54,11 +54,20 @@ NDTmeter.prototype.create = function () {
 
   var svg = d3.select(this.body_element).append("svg")
     .attr("viewBox", "0 0 " + width + " " + width )
-    .attr("preserveAspectRatio", "xMidYMid meet")
-    .append("g")
+    .attr("preserveAspectRatio", "xMidYMid meet");
+
+  // Accessibility
+  svg
+    .attr('aria-labelledby', 'svgTitle')
+    .attr('tabindex', 0)
+    .append('title')
+      .text('Start Test')
+      .attr('id', 'svgTitle');
+
+  var svg_g = svg.append("g")
       .attr("transform", "translate(" + width / 2 + "," + width / 2 + ")");
 
-  var gradient = svg
+  var gradient = svg_g
     .append("linearGradient")
       .attr("id", "gradient")
       .attr("gradientUnits", "userSpaceOnUse");
@@ -77,7 +86,7 @@ NDTmeter.prototype.create = function () {
     .endAngle(0)
     .innerRadius(innerRad)
     .outerRadius(outerRad);
-  this.meter = svg.append("g")
+  this.meter = svg_g.append("g")
     .attr("id", "progress-meter")
     .attr("fill", "url(#gradient)");
   this.meter.append("path")

@@ -7,6 +7,11 @@
   margin: 0 auto;
 }
 
+#ndt-svg svg:active,
+#ndt-svg svg:focus {
+  /* to have styles applied to SVG for a11y, put 'em here */
+}
+
 #progress-meter {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
@@ -132,7 +137,8 @@ summary {
 
 details:focus,
 summary:focus {
-  outline: none !important;
+  box-shadow: 0 0 0 .1875rem rgba(0,186,188,.25);
+  outline: none;
 }
 
 summary::-webkit-details-marker {
@@ -176,23 +182,16 @@ details h3 {
   margin-bottom: 3rem;
 }
 
-#consent-text p {
+#consent-text label {
+  align-items: center !important;
   display: flex !important;
   justify-content: flex-start !important;
-  align-items: center !important;
+  position: relative;
 }
 
-#consent-text p input[type="checkbox"] {
+#consent-text label input[type="checkbox"] {
   height: auto !important;
   width: auto !important;
-}
-
-#consent-text p > *:not(a) {
-  margin: 0 1rem 0 0 !important;
-}
-
-#consent-text p > a {
-  margin-left: .5rem !important;
 }
 
 @media (max-width: 1440px) {
@@ -218,17 +217,6 @@ label input[type="checkbox"] {
     flex: 0 0 2em;
 }
 
-input[type="checkbox"] {
-  visibility: hidden;
-}
-
-#consent-text label {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-#consent-text label::before,
 .checkbox-label::before {
     content: "";
     display: flex;
@@ -245,11 +233,6 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-#consent-text label::before {
-  left: 1.5rem;
-}
-
-#consent-text label.pseudo-checked::before,
 .checkbox-label.pseudo-checked::before {
   border: 1px solid #00babc;
   background: #00babc;
@@ -290,40 +273,26 @@ input[type="checkbox"] {
 }
 
 #take-test {
-  display: block !important;
-  width: 100%;
-}
-
-.button-label {
-  padding: 0 1rem;
-  border: 1px solid #304c58;
-  color: #304c58;
-  font-weight: 300 !important;
-  transition: all 120ms linear;
-  text-transform: uppercase;
-  font-size: 18px !important;
-  margin: 36px 0 0 0 !important;
-}
-
-#take-test .button-label {
-  margin-top: 0 !important;
   background: #304c58;
+  border-radius: 0;
+  border: 1px solid #304c58;
   color: white;
-  padding: 1rem 2rem;
+  font-size: 18px !important;
+  font-weight: 300 !important;
+  padding: 2rem 4rem;
+  transition: all 120ms linear;
 }
 
-#take-test .button-label:hover {
+#take-test:focus,
+#take-test:hover {
   background: #243840;
+  box-shadow: 0 0 0 .1875rem rgba(0,186,188,.25);
+  color: white;!important;
 }
 
-.button-label:hover,
-.button-label:focus {
-  background: #243840;
-  color: white;
-}
-
-.disabled {
+#take-test[disabled=disabled] {
+  box-shadow: none !important;
   cursor: not-allowed;
-  pointer-events: none;
   opacity: 0.5;
+  pointer-events: none;
 }

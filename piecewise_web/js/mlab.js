@@ -643,6 +643,10 @@ function showTestingPanel() {
 
 /* New functions */
 function runTest() {
+  // Accessibility: DOM order is wonky, move focus above test
+  // before we hide things and can't, and so tab order feels normal.
+  $('#extra-data input').first().focus()
+
   $('#ndt-div').removeClass('hidden');
   $('.logos').addClass('hidden');
   $('.about').addClass('hidden');
@@ -754,10 +758,7 @@ $(function() {
 });
 
 function uncheckAcknowledgement(){
-  var datacheck = document.getElementById('data_acknowledgement');
-  if($(datacheck).is(':checked')){
-    $(datacheck).attr("checked", false);
-  }
+  $('#data_acknowledgement').attr("checked", false);
 }
 
 
@@ -805,18 +806,16 @@ $( document ).ready(function() {
   let takeTest = document.getElementById('take-test');
 
   takeTest.setAttribute('onclick', '');
-  takeTest.classList.add('disabled');
+  takeTest.disabled = true;
 
   consent.addEventListener('change', function() {
     if (consent.checked) {
-      consent.parentElement.classList.add('pseudo-checked');
       takeTest.setAttribute('onclick', 'runTest()');
-      takeTest.classList.remove('disabled');
+      takeTest.disabled = false;
       return;
     }
 
-    takeTest.classList.add('disabled');
-    consent.parentElement.classList.remove('pseudo-checked');
+    takeTest.disabled = true;
   });
 
   // Reload page link from map warning
@@ -825,7 +824,8 @@ $( document ).ready(function() {
     evt.preventDefault();
   });
 
-  $('#autocomplete').on('focus', geolocate());
+  // Use geolocation to fence autocomplete (see google-places.js)
+  $('#survey_address_line_1_id').on('focus', geolocate());
 
   let participant_id = window.location.pathname.split('/')[1];
   if (participant_id !== "") {
