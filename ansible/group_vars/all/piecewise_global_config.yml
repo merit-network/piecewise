@@ -617,10 +617,10 @@ form_fields:
       required: yes
       options:
         a_default: "------"
-        b_le_25: "Less than 25Mbps"
-        c_ge_25_le_100: "Greater than 25Mbps and less than 100Mpbs"
-        d_ge_100_le_1000: "Greater than 100Mbps and less than 1Gbps"
-        e_ge_1000: "Greater than 1Gbps"
+        b_le_25: "Less than 25 Mbps"
+        c_ge_25_le_100: "25 - 100 Mbps"
+        d_ge_100_le_1000: "101 Mbps - 1 Gbps"
+        e_ge_1000: "More than 1 Gbps"
         f_dont_know: "I don't know"
   16:
     survey_satisfaction:
