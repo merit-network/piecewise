@@ -831,6 +831,11 @@ $( document ).ready(function() {
   if (participant_id !== "") {
     $('#survey_participant_id').val(participant_id);
     $('#container-survey_participant_id').hide();
+
+    var $survey_link = $('a#unserved-survey');
+    var url = new URL($survey_link.attr('href'));;
+    url.searchParams.append("pid", participant_id);
+    $survey_link.attr('href', url.toString());
   }
 
   $('#container-survey_user_agent').hide();
