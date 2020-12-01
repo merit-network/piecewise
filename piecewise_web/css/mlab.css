@@ -365,7 +365,8 @@ span.ui-slider-handle.ui-state-default.ui-corner-all:focus {
 }
 #icons {
   width: 100%;
-  margin: 0 auto;
+  margin-top: 0;
+  margin-bottom: 10px;
   float: left;
   text-align: center;
 }
